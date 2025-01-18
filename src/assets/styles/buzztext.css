@@ -1,7 +1,4 @@
 body {
-    background-color: #000;
-    font-family: 'Courier New', monospace;
-    color: white;
     margin: 0;
     padding: 0;
 }
@@ -9,7 +6,7 @@ body {
 .buzz_wrapper {
     position: relative;
     width: 100%;
-    padding: 100px;
+    padding: 10px;
     text-align: center;
     display: inline-block;
 }
@@ -17,12 +14,10 @@ body {
 .buzz_wrapper span {
     position: relative;
     font-size: 80px;
-    font-weight: bold;
     color: white;
     display: inline-block;
     -webkit-filter: blur(1px);
     animation: blur 30ms infinite, jerk 50ms infinite;
-    margin-right: 5px;
 }
 
 .buzz_wrapper .space {

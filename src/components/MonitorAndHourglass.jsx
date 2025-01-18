@@ -4,7 +4,7 @@ import { Monitor, Hourglass } from 'react95';
 const MonitorWithHourglass = () => {
   return (
     <div style={{ position: 'relative', width: '300px', height: '200px' }}>
-      <Monitor className="retro-monitor" style={{ background: 'black' }}>
+      <Monitor className="retro-monitor" backgroundStyles={{ background: 'blue' }}>
         <div style={{
           position: 'absolute',
           top: '50%',

@@ -41,9 +41,9 @@ const MainScreen = () => {
 
     return (
         <Container>
-            <BuzzText text="Jérémy Girard" />
+            <BuzzText text="Jeremy Girard" />
             <ScreenWrapper onClick={handleMonitorClick}>
-                {showPortfolio ? <PortfolioScreen /> : (isHourglass ? <MonitorWithHourglass /> : <Monitor className="retro-monitor" />)}
+                {showPortfolio ? <PortfolioScreen /> : (isHourglass ? <MonitorWithHourglass /> : <Monitor backgroundStyles={{ background: 'blue' }} />)}
             </ScreenWrapper>
         </Container>
     );

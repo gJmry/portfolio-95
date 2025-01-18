@@ -9,9 +9,7 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000;
-    color: #00ff00;
-    font-family: 'Courier New', monospace;
+    color: greenyellow;
 `;
 
 const Terminal = styled.div`
@@ -22,7 +20,7 @@ const Terminal = styled.div`
     font-size: 0.9rem;
     line-height: 1.4;
     width: 50%;
-    max-height: 80vh;
+    max-height: 100vh;
     overflow: hidden;
     box-sizing: border-box;
 `;
@@ -50,7 +48,7 @@ const StartupScreen = () => {
                     clearInterval(interval);
                     setTimeout(() => {
                         navigate('/main');
-                    }, 1000);
+                    }, 400);
                     return prev;
                 }
                 return prev + 1;

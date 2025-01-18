@@ -1,11 +1,10 @@
 body {
-  background-color: #000;
-  font-family: 'Courier New', monospace;
-  color: white;
   margin: 0;
   padding: 0;
-  filter: blur(0.3px);
+  filter: blur(0.7px);
   overflow: hidden;
+  background: #181A1B;
+  color: white;
 
   .app-wrapper {
     position: relative;
