@@ -1,0 +1,87 @@
+body {
+    background-color: #000;
+    font-family: 'Courier New', monospace;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.buzz_wrapper {
+    position: relative;
+    width: 100%;
+    padding: 100px;
+    text-align: center;
+    display: inline-block;
+}
+
+.buzz_wrapper span {
+    position: relative;
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+    -webkit-filter: blur(1px);
+    animation: blur 30ms infinite, jerk 50ms infinite;
+    margin-right: 5px;
+}
+
+.buzz_wrapper .space {
+    display: inline-block;
+    width: 20px;
+}
+
+@keyframes blur {
+    0% {
+        -webkit-filter: blur(1px);
+        opacity: 0.8;
+    }
+    50% {
+        -webkit-filter: blur(1px);
+        opacity: 1;
+    }
+    100% {
+        -webkit-filter: blur(1px);
+        opacity: 0.8;
+    }
+}
+
+@keyframes jerk {
+    50% {
+        left: 1px;
+    }
+    51% {
+        left: 0;
+    }
+}
+
+.buzz_wrapper .text {
+    position: relative;
+    animation: jerkwhole 5s infinite;
+}
+
+@keyframes jerkwhole {
+    40% {
+        opacity: 1;
+        top: 0;
+        left: 0;
+        transform: scale(1, 1) skew(0, 0);
+    }
+    41% {
+        opacity: 0.8;
+        top: 0px;
+        left: -100px;
+        transform: scale(1, 1.2) skew(50deg, 0);
+    }
+    42% {
+        opacity: 0.8;
+        top: 0px;
+        left: 100px;
+        transform: scale(1, 1.2) skew(-80deg, 0);
+    }
+    43% {
+        opacity: 1;
+        top: 0;
+        left: 0;
+        transform: scale(1, 1) skew(0, 0);
+    }
+}
