@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Monitor } from 'react95';
+import { Monitor, ProgressBar } from 'react95';
 import { BuzzText } from './BuzzyText.jsx';
 import MonitorWithHourglass from './MonitorAndHourglass.jsx';
 import PortfolioScreen from './PortfolioScreen.jsx';
@@ -18,6 +18,7 @@ const Container = styled.div`
 
 const ScreenWrapper = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
@@ -28,10 +29,11 @@ const ScreenWrapper = styled.div`
 const MainScreen = () => {
     const navigate = useNavigate();
     const [isHourglass, setIsHourglass] = useState(false);
-    const [showPortfolio, setShowPortfolio] = useState(false);
+    const [percent, setPercent] = useState(0);
 
     const handleMonitorClick = () => {
-        setIsHourglass(!isHourglass);
+        setIsHourglass(true);
+
         const timer = setTimeout(() => {
             navigate('/portfolio');
         }, 3000);
@@ -39,11 +41,26 @@ const MainScreen = () => {
         return () => clearTimeout(timer);
     };
 
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setPercent((prev) => (prev >= 100 ? 0 : Math.min(prev + Math.random() * 10, 100)));
+        }, 500);
+
+        return () => clearInterval(timer);
+    }, []);
+
     return (
         <Container>
             <BuzzText text="Jeremy Girard" />
+
             <ScreenWrapper onClick={handleMonitorClick}>
-                {showPortfolio ? <PortfolioScreen /> : (isHourglass ? <MonitorWithHourglass /> : <Monitor backgroundStyles={{ background: 'blue' }} />)}
+                {isHourglass ? (
+                    <MonitorWithHourglass />
+                ) : (
+                    <Monitor backgroundStyles={{ background: 'blue' }} />
+                )}
+
+                <ProgressBar value={Math.floor(percent)} />
             </ScreenWrapper>
         </Container>
     );
