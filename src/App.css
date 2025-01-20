@@ -14,6 +14,18 @@ body{
   h1, h2, h3, p, span, div {
     filter: none;
   }
+  .desktop-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(6, 120px);
+    gap: 12px;
+    padding: 16px;
+    justify-content: start;
+    align-content: start;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
 
   .desktop-icon {
     width: 70px;

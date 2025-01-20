@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import { useWindowContext } from '../assets/scripts/WindowContext';
-import { Explorer108 } from "@react95/icons";
+import {Explorer108, FileText} from "@react95/icons";
 
 export const Desktop = () => {
     const { toggleWindow } = useWindowContext();
@@ -21,7 +21,7 @@ export const Desktop = () => {
     useEffect(() => {
         const handleOutsideClick = (event) => {
             if (containerRef.current && !containerRef.current.contains(event.target)) {
-                setActiveIcon(null); // Désactive toutes les icônes
+                setActiveIcon(null);
             }
         };
 
@@ -47,7 +47,7 @@ export const Desktop = () => {
                 onClick={() => handleToggleIcon(2)}
                 onDoubleClick={() => handleDoubleClick('CV')}
             >
-                <Explorer108 variant="32x32_4" />
+                <FileText variant="32x32_4"/>
                 <p>Curriculum Vitae</p>
             </div>
         </div>

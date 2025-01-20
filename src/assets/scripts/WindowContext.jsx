@@ -5,6 +5,7 @@ const WindowContext = createContext(undefined);
 export const WindowProvider = ({ children }) => {
     const [windows, setWindows] = useState({
         CV: false,
+        RecycleBin: false,
     });
 
     const toggleWindow = (windowName) => {
