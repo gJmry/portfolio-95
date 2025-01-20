@@ -1,7 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Footer } from './Footer.jsx';
-import {WindowsCV} from "./Windows/WindowsCV.jsx";
+import { WindowsCV } from "./Windows/WindowsCV.jsx";
+import { Desktop } from "./Desktop.jsx";
+import { WindowProvider } from '../assets/scripts/WindowContext.jsx';
 
 const PortfolioContainer = styled.div`
     width: 100%;
@@ -15,23 +17,19 @@ const PortfolioContainer = styled.div`
 const Content = styled.div`
     flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: cente  r;
 `;
 
 const PortfolioScreen = () => {
-    const [isCVOpen, setIsCVOpen] = useState(false);
-
-    const handleOpenCV = () => setIsCVOpen(true);
-    const handleCloseCV = () => setIsCVOpen(false);
-
     return (
-        <PortfolioContainer>
-            <Content>
-                <WindowsCV isOpen={isCVOpen} onClose={handleCloseCV} />
-            </Content>
-            <Footer onOpenCV={handleOpenCV} />
-        </PortfolioContainer>
+        <WindowProvider>
+            <PortfolioContainer>
+                <Content>
+                    <Desktop />
+                    <WindowsCV />
+                </Content>
+                <Footer />
+            </PortfolioContainer>
+        </WindowProvider>
     );
 };
 

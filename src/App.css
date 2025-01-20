@@ -1,4 +1,4 @@
-body {
+body{
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -13,5 +13,28 @@ body {
 
   h1, h2, h3, p, span, div {
     filter: none;
+  }
+  .desktop-icons {
+    width: 70px;
+    height: 70px;
+    margin: 4px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .desktop-icons p {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .active-icon {
+    background: rgba(12, 0, 120, 0.6);
+    border: 1px white dotted;
+  }
+
+  .inactive-icon {
+    text-decoration: none;
   }
 }

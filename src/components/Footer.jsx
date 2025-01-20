@@ -1,15 +1,15 @@
-import {useState} from "react";
-import {AppBar, Button, MenuList, MenuListItem, Separator, Toolbar} from "react95";
-import {Comdlg32533, Computer4, Progman23, Shell32166} from "@react95/icons";
+import { useState } from "react";
+import { AppBar, Button, MenuList, MenuListItem, Separator, Toolbar } from "react95";
+import { Comdlg32533, Computer4, Progman23, Shell32166 } from "@react95/icons";
+import { useWindowContext } from "../assets/scripts/WindowContext.jsx";
 
-export function Footer({ onOpenCV }) {
+export function Footer() {
+    const {toggleWindow } = useWindowContext();
     const [open, setOpen] = useState(false);
 
-    const handleCVClick = () => {
+    const handleClick = (windowName) => {
+        toggleWindow(windowName);
         setOpen(false);
-        if (onOpenCV) {
-            onOpenCV();
-        }
     };
 
     return (
@@ -21,8 +21,8 @@ export function Footer({ onOpenCV }) {
                 zIndex: 10,
             }}
         >
-            <Toolbar style={{justifyContent: 'space-between'}}>
-                <div style={{position: 'relative', display: 'inline-block'}}>
+            <Toolbar style={{ justifyContent: 'space-between' }}>
+                <div style={{ position: 'relative', display: 'inline-block' }}>
                     <Button
                         onClick={() => setOpen(!open)}
                         active={open}
@@ -30,7 +30,7 @@ export function Footer({ onOpenCV }) {
                         <img
                             src="https://avatars.githubusercontent.com/u/75862623?s=96&v=4"
                             alt='react95 logo'
-                            style={{height: '25px', marginRight: 4}}
+                            style={{ height: '25px', marginRight: 4 }}
                         />
                         Start
                     </Button>
@@ -41,21 +41,21 @@ export function Footer({ onOpenCV }) {
                                 left: '-5px',
                                 top: '-12em'
                             }}
-                            onClick={() => setOpen(false)}
+                            onClick={() => setOpen(false)} // Closes the menu on any click
                         >
-                            <MenuListItem onClick={handleCVClick}>
-                                <Comdlg32533 variant="32x32_4"/> CV
+                            <MenuListItem onClick={() => handleClick('CV')}>
+                                <Comdlg32533 variant="32x32_4" /> CV
                             </MenuListItem>
-                            <MenuListItem>
-                                <Progman23 variant="32x32_4"/> Mail
+                            <MenuListItem onClick={() => handleClick('Mail')}>
+                                <Progman23 variant="32x32_4" /> Mail
                             </MenuListItem>
-                            <MenuListItem>
-                                <Computer4 variant="32x32_4"/> Github
+                            <MenuListItem onClick={() => handleClick('Github')}>
+                                <Computer4 variant="32x32_4" /> Github
                             </MenuListItem>
-                            <MenuListItem>
-                                <Shell32166 variant="32x32_4"/> Instagram
+                            <MenuListItem onClick={() => handleClick('Instagram')}>
+                                <Shell32166 variant="32x32_4" /> Instagram
                             </MenuListItem>
-                            <Separator/>
+                            <Separator />
                         </MenuList>
                     )}
                 </div>
