@@ -1,8 +1,16 @@
 import {useState} from "react";
-import {AppBar, Button, MenuList, MenuListItem, Separator, TextInput, Toolbar} from "react95";
+import {AppBar, Button, MenuList, MenuListItem, Separator, Toolbar} from "react95";
+import {Comdlg32533, Computer4, Progman23, Shell32166} from "@react95/icons";
 
-export function Footer() {
+export function Footer({ onOpenCV }) {
     const [open, setOpen] = useState(false);
+
+    const handleCVClick = () => {
+        setOpen(false);
+        if (onOpenCV) {
+            onOpenCV();
+        }
+    };
 
     return (
         <AppBar
@@ -30,26 +38,27 @@ export function Footer() {
                         <MenuList
                             style={{
                                 position: 'absolute',
-                                left: '0',
-                                top: '-10em'
+                                left: '-5px',
+                                top: '-12em'
                             }}
                             onClick={() => setOpen(false)}
                         >
-                            <MenuListItem>
-                                Profile
+                            <MenuListItem onClick={handleCVClick}>
+                                <Comdlg32533 variant="32x32_4"/> CV
                             </MenuListItem>
                             <MenuListItem>
-                                My account
+                                <Progman23 variant="32x32_4"/> Mail
+                            </MenuListItem>
+                            <MenuListItem>
+                                <Computer4 variant="32x32_4"/> Github
+                            </MenuListItem>
+                            <MenuListItem>
+                                <Shell32166 variant="32x32_4"/> Instagram
                             </MenuListItem>
                             <Separator/>
-                            <MenuListItem>
-
-                                Logout
-                            </MenuListItem>
                         </MenuList>
                     )}
                 </div>
-
                 Made with ❤️ using React & React95
             </Toolbar>
         </AppBar>

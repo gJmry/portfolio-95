@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import { Footer } from './Footer.jsx';
+import {WindowsCV} from "./Windows/WindowsCV.jsx";
 
 const PortfolioContainer = styled.div`
     width: 100%;
@@ -15,16 +16,21 @@ const Content = styled.div`
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: cente  r;
 `;
 
 const PortfolioScreen = () => {
+    const [isCVOpen, setIsCVOpen] = useState(false);
+
+    const handleOpenCV = () => setIsCVOpen(true);
+    const handleCloseCV = () => setIsCVOpen(false);
+
     return (
         <PortfolioContainer>
             <Content>
-                <div>Bienvenue sur le portfolio de Jeremy Girard</div>
+                <WindowsCV isOpen={isCVOpen} onClose={handleCloseCV} />
             </Content>
-            <Footer />
+            <Footer onOpenCV={handleOpenCV} />
         </PortfolioContainer>
     );
 };

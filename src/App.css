@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  filter: blur(0.7px);
   overflow: hidden;
   background: #181A1B;
   color: white;
