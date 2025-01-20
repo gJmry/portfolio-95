@@ -1,6 +1,16 @@
 import React, {useEffect, useRef, useState} from 'react';
 import { useWindowContext } from '../assets/scripts/WindowContext';
-import {Explorer108, FileText} from "@react95/icons";
+import {
+    CdMusic,
+    Computer,
+    Explorer108,
+    FileText,
+    FlyingThroughSpace100,
+    FolderExe2,
+    Joy102,
+    RecycleFull,
+    Star
+} from "@react95/icons";
 
 export const Desktop = () => {
     const { toggleWindow } = useWindowContext();
@@ -39,7 +49,7 @@ export const Desktop = () => {
                 onClick={() => handleToggleIcon(1)}
                 onDoubleClick={() => handleDoubleClick('RecycleBin')}
             >
-                <Explorer108 variant="32x32_4" />
+                <RecycleFull variant="32x32_4"/>
                 <p>Recycle Bin</p>
             </div>
             <div
@@ -49,6 +59,54 @@ export const Desktop = () => {
             >
                 <FileText variant="32x32_4"/>
                 <p>Curriculum Vitae</p>
+            </div>
+            <div
+                className={activeIcon === 3 ? "active-icon desktop-icon" : "inactive-icon desktop-icon"}
+                onClick={() => handleToggleIcon(3)}
+                onDoubleClick={() => handleDoubleClick('Projects')}
+            >
+                <FolderExe2 variant="32x32_4"/>
+                <p>Projects</p>
+            </div>
+            <div
+                className={activeIcon === 4 ? "active-icon desktop-icon" : "inactive-icon desktop-icon"}
+                onClick={() => handleToggleIcon(4)}
+                onDoubleClick={() => handleDoubleClick('Education')}
+            >
+                <Computer variant="32x32_4"/>
+                <p>Education</p>
+            </div>
+            <div
+                className={activeIcon === 5 ? "active-icon desktop-icon" : "inactive-icon desktop-icon"}
+                onClick={() => handleToggleIcon(5)}
+                onDoubleClick={() => handleDoubleClick('Sport')}
+            >
+                <Joy102 variant="32x32_4"/>
+                <p>Sport</p>
+            </div>
+            <div
+                className={activeIcon === 6 ? "active-icon desktop-icon" : "inactive-icon desktop-icon"}
+                onClick={() => handleToggleIcon(6)}
+                onDoubleClick={() => handleDoubleClick('Music')}
+            >
+                <CdMusic variant="32x32_4"/>
+                <p>Music</p>
+            </div>
+            <div
+                className={activeIcon === 7 ? "active-icon desktop-icon" : "inactive-icon desktop-icon"}
+                onClick={() => handleToggleIcon(7)}
+                onDoubleClick={() => handleDoubleClick('Skills')}
+            >
+                <Star variant="32x32_4"/>
+                <p>Skills</p>
+            </div>
+            <div
+                className={activeIcon === 8 ? "active-icon desktop-icon" : "inactive-icon desktop-icon"}
+                onClick={() => handleToggleIcon(8)}
+                onDoubleClick={() => handleDoubleClick('Experiences')}
+            >
+                <FlyingThroughSpace100 variant="32x32_4"/>
+                <p>Experiences</p>
             </div>
         </div>
     );

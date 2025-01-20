@@ -17,7 +17,7 @@ body{
   .desktop-container {
     display: grid;
     grid-auto-flow: column;
-    grid-template-rows: repeat(6, 120px);
+    grid-template-rows: repeat(5, 120px);
     gap: 12px;
     padding: 16px;
     justify-content: start;
