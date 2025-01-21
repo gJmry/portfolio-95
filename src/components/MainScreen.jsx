@@ -53,7 +53,7 @@ const MainScreen = () => {
                         clearInterval(timer);
                         setTimeout(() => {
                             navigate('/portfolio');
-                        }, 500); // Petite pause avant la redirection
+                        }, 500);
                     }
                     return nextValue;
                 });
