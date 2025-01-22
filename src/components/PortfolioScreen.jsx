@@ -5,6 +5,7 @@ import { WindowsCV } from "./Windows/WindowsCV.jsx";
 import { Desktop } from "./Desktop.jsx";
 import { WindowProvider } from '../assets/scripts/WindowContext.jsx';
 import {WindowsRecycleBin} from "./Windows/WindowsRecycleBin.jsx";
+import {WindowsProjects} from "./Windows/WindowsProjects.jsx";
 
 const PortfolioContainer = styled.div`
     width: 100%;
@@ -28,6 +29,7 @@ const PortfolioScreen = () => {
                     <Desktop />
                     <WindowsCV />
                     <WindowsRecycleBin />
+                    <WindowsProjects />
                 </Content>
                 <Footer />
             </PortfolioContainer>

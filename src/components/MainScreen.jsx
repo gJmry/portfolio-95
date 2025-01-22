@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Monitor, ProgressBar } from 'react95';
-import { BuzzText } from './BuzzyText.jsx';
 import MonitorWithHourglass from './MonitorAndHourglass.jsx';
-import Background from './Background.jsx'; // Import du composant
+import Background from './Background.jsx';
 import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`

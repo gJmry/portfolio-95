@@ -6,6 +6,9 @@ export const WindowProvider = ({ children }) => {
     const [windows, setWindows] = useState({
         CV: false,
         RecycleBin: false,
+        Projects: false,
+        Experiences: false,
+        Music: false,
     });
 
     const toggleWindow = (windowName) => {

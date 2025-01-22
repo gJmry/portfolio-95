@@ -15,7 +15,7 @@ const Text = styled.p`
     color: rgba(255, 255, 255, 0.1);
     user-select: none;
     pointer-events: none;
-    animation: ${diagonalMove} 2s linear infinite;
+    animation: ${diagonalMove} 5s infinite ;
 `;
 
 const getRandomPosition = () => {

@@ -1,6 +1,6 @@
-import {useState} from "react";
+import React, {useState} from "react";
 import {AppBar, Button, MenuList, MenuListItem, Separator, Toolbar, Tooltip} from "react95";
-import {Comdlg32533, Computer4, Progman23, Shell32166} from "@react95/icons";
+import {Comdlg32533, Computer4, FlyingThroughSpace100, FolderExe2, Progman23, Shell32166, Star} from "@react95/icons";
 import {useWindowContext} from "../assets/scripts/WindowContext.jsx";
 
 export function Footer() {
@@ -39,25 +39,41 @@ export function Footer() {
                             style={{
                                 position: 'absolute',
                                 left: '-5px',
-                                top: '-12em'
+                                top: '-21em',
+                                width: '12em'
                             }}
-                            onClick={() => setOpen(false)} // Closes the menu on any click
+                            onClick={() => setOpen(false)}
                         >
-                            <MenuListItem onClick={() => handleClick('CV')}>
-                                <Comdlg32533 variant="32x32_4"/> CV
+                            <MenuListItem style={{fontSize: '16px'}} onClick={() => handleClick('CV')}>
+                                <Comdlg32533 variant="32x32_4"/> Curriculum Vitae
                             </MenuListItem>
-                            <MenuListItem onClick={() => handleClick('Mail')}>
-                                <Progman23 variant="32x32_4"/> Mail
+                            <MenuListItem style={{fontSize: '16px'}} onClick={() => handleClick('Projects')}>
+                                <FolderExe2 variant="32x32_4"/> Projects
                             </MenuListItem>
-                            <MenuListItem onClick={() => handleClick('Github')}>
-                                <Computer4 variant="32x32_4"/> Github
+                            <MenuListItem style={{fontSize: '16px'}} onClick={() => handleClick('CV')}>
+                                <FlyingThroughSpace100 variant="32x32_4"/> Experiences
                             </MenuListItem>
-                            <MenuListItem onClick={() => handleClick('Instagram')}>
-                                <Shell32166 variant="32x32_4"/> Instagram
+                            <MenuListItem style={{fontSize: '16px'}} onClick={() => handleClick('CV')}>
+                                <Star variant="32x32_4"/> Skills
                             </MenuListItem>
-                            <Separator/>
+
+
+                            <Separator />
+                            <MenuListItem style={{fontSize: '16px'}} onClick={() => handleClick('Mail')}>
+                                <Progman23 variant="32x32_4"/> Contact Me
+                            </MenuListItem>
+                            <a href={"https://github.com/gJmry"} target={"_blank"}>
+                                <MenuListItem style={{fontSize: '16px'}} onClick={() => handleClick('Github')}>
+                                    <Computer4 variant="32x32_4"/> My Github
+                                </MenuListItem>
+                            </a>
+                            <a href={""} target={"_blank"}>
+                                <MenuListItem style={{fontSize: '14px'}} onClick={() => handleClick('Instagram')}>
+                                    <Shell32166 variant="32x32_4"/> My Instagram
+                                </MenuListItem>
+                            </a>
                         </MenuList>
-                    )}
+                        )}
                 </div>
                 <div>
                     Made with
