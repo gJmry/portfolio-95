@@ -2,14 +2,17 @@
   {
     "id": "5",
     "name": "Budget Tracker",
-    "description": "A simple app to track expenses.",
+    "small_description": "A simple app to track expenses.",
+    "long_description": "A long app to track expenses.",
     "image": "https://via.placeholder.com/150",
     "icon": "folder"
-  },  {
-  "id": "6",
-  "name": "Budget Tracker",
-  "description": "A simple app to track expenses.",
-  "image": "https://via.placeholder.com/150",
-  "icon": "workout"
-}
+  },
+  {
+    "id": "6",
+    "name": "Budget Tracker",
+    "small_description": "A simple app to track expenses.",
+    "long_description": "A long app to track expenses.",
+    "image": "https://via.placeholder.com/150",
+    "icon": "workout"
+  }
 ]

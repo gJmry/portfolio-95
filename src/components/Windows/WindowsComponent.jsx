@@ -8,7 +8,7 @@ import {
     WindowHeader,
 } from 'react95';
 import styled from 'styled-components';
-import {Rnd} from 'react-rnd';
+import { Rnd } from 'react-rnd';
 
 const Wrapper = styled.div`
     padding: 5rem;
@@ -32,7 +32,7 @@ const Wrapper = styled.div`
         &:after {
             content: '';
             position: absolute;
-            background: ${({theme}) => theme.materialText};
+            background: ${({ theme }) => theme.materialText};
         }
 
         &:before {
@@ -67,9 +67,8 @@ const Wrapper = styled.div`
 
 export function WindowsComponent({
                                      title = 'Window',
-                                     defaultPosition = {x: 100, y: 100, width: 400, height: 300},
+                                     defaultPosition = { x: 100, y: 100, width: 400, height: 300 },
                                      onClose,
-                                     headerButtons = [],
                                      toolbarButtons = [],
                                      children,
                                      footerContent,
@@ -84,19 +83,13 @@ export function WindowsComponent({
                 <Window resizable={false} className="window">
                     <WindowHeader className="window-title">
                         <span>{title}</span>
-                        <div>
-                            {headerButtons.map((btn, idx) => (
-                                <Button key={idx} onClick={btn.onClick}>
-                                    {btn.icon || <span className="close-icon"/>}
-                                </Button>
-                            ))}
-                            {onClose && (
-                                <Button onClick={onClose}>
-                                    <span className="close-icon"/>
-                                </Button>
-                            )}
-                        </div>
+                        {onClose && (
+                            <Button onClick={onClose}>
+                                <span className="close-icon" />
+                            </Button>
+                        )}
                     </WindowHeader>
+
                     <Toolbar>
                         {toolbarButtons.map((btn, idx) => (
                             <Button key={idx} variant="menu" size="sm" {...btn.props}>
@@ -104,7 +97,9 @@ export function WindowsComponent({
                             </Button>
                         ))}
                     </Toolbar>
+
                     <WindowContent>{children}</WindowContent>
+
                     {footerContent && (
                         <Frame variant="well" className="footer">
                             {footerContent}
