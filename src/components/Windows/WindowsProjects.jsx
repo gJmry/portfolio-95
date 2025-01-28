@@ -6,6 +6,9 @@ import {ComputerFind, Folder} from "@react95/icons";
 import personalProjects from "../../assets/json/projects/personalProjects.json";
 import universityProjects from "../../assets/json/projects/universityProjects.json";
 import collaborativeProjects from "../../assets/json/projects/collaborativeProjects.json";
+import pokemon_logo from "../../assets/images/projects/pokemon_api.png"
+import doom_guy from "../../assets/images/projects/doom_guy.png"
+import open_book from "../../assets/images/projects/open_book.png"
 
 export function WindowsProjects() {
     const images = {
@@ -17,9 +20,12 @@ export function WindowsProjects() {
     if (!windows.Projects) return null;
 
     const iconMap = {
-        folder: <Folder variant="32x32_4" />,
+        folder: <Folder variant="32x32_4"/>,
         workout: <span role="img" aria-label="workout">🏋️</span>,
-        computer_find: <ComputerFind variant="32x32_4" />,
+        computer_find: <ComputerFind variant="32x32_4"/>,
+        doom: <img src={doom_guy} alt="Doom Logo" style={{width: '32px', height: '32px'}}/>,
+        pokemon: <img src={pokemon_logo} alt="Pokemon Logo" style={{width: '32px', height: '32px'}}/>,
+        book: <img src={open_book} alt="Book Logo" style={{width: '32px', height: '32px'}}/>,
     };
 
     const [openProjects, setOpenProjects] = useState([]);

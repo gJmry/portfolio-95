@@ -13,7 +13,7 @@
     "small_description": "An API for Pokemon in Rust",
     "long_description": "This was my very first project in Rust and also my first API! I wanted it to be fast and secure, so Rust felt like the perfect choice. At first, it was a real struggle to figure things out, but once it clicked, it was actually pretty fun. The API isn’t super detailed (for example, it’s not great for handling Pokémon since it’s missing a lot of properties), but it works! My main goal was to learn and mess around with Rust, not to make something perfect.",
     "github": "https://github.com/gJmry/PokemonAPI",
-    "icon": "folder"
+    "icon": "pokemon"
   },
   {
     "id": "3",
@@ -21,7 +21,7 @@
     "small_description": "Raycasting (Doom-Like) in C",
     "long_description": "This project was a real brain workout! I followed a tutorial to figure it out, and honestly, I still don’t fully understand how it all works. But it was super cool diving into the math to create my own raycasting software. I didn’t take it much further because, well, I tend to jump between projects a lot. But hey, it was a really fun experience while it lasted!",
     "github": "https://github.com/gJmry/RayCaster",
-    "icon": "folder"
+    "icon": "doom"
   },
   {
     "id": "4",
@@ -29,6 +29,6 @@
     "small_description": "My own personal Blog !",
     "long_description": "At some point in my dev journey, I thought, 'Why not make a blog to share my ideas?' There’s not much on it yet, but I’m hoping to add more this year. It’s super fun to work on, and it feels like a cool little milestone in my career!",
     "github": "https://github.com/gJmry/RayCaster",
-    "icon": "folder"
+    "icon": "book"
   }
 ]
