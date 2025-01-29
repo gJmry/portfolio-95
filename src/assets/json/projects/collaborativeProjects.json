@@ -1,18 +1,19 @@
 [
   {
-    "id": "3",
-    "name": "Budget Tracker",
-    "small_description": "A simple app to track expenses.",
-    "long_description": "A long app to track expenses.",
+    "id": "101",
+    "name": "Dodeci-XII",
+    "small_description": "A compilation of fun web projects",
+    "long_description": "With my friend Titouan-Lysandre, we wanted to create websites because we were bored. That’s how we came up with the idea of an 'organization' that compiles various web projects built with different frameworks. We drew a lot of inspiration from Neal.fun, the famous website behind Infinite Craft. Dodeci features a collection of quirky projects, such as a queue simulator (waiting in line), a fake news generator, and many other fun and absurd experiments.",
     "image": "https://via.placeholder.com/150",
-    "icon": "folder"
+    "github": "https://github.com/Dodeci-XII",
+    "icon": "dodeci"
   },
   {
-    "id": "4",
-    "name": "Budget Tracker",
-    "small_description": "A simple app to track expenses.",
-    "long_description": "A long app to track expenses.",
+    "id": "102",
+    "name": "NDLI 2024",
+    "small_description": "A website made for the Nuit de l'Info 2024",
+    "long_description": "For the Nuit de l'Info 2024, seven of my colleagues and I decided to take on the challenge. The Nuit de l'Info is a nationwide hackathon in France where teams of students have one night to develop a web application based on a given theme. It’s an intense and exciting experience that pushes participants to collaborate, learn, and build under time constraints. Even though our website wasn’t perfect, it was a great experience to work under pressure and see how much we could achieve in such a short time. Staying focused was a challenge for many, but as the project leader, I did my best to keep everyone on track. I also introduced the team to Svelte and Tailwind, which most of them had never used before. It was rewarding to guide them through the process and see the project take shape in just a few hours.",
     "image": "https://via.placeholder.com/150",
-    "icon": "workout"
+    "icon": "ndli"
   }
 ]

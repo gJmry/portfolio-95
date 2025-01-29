@@ -1,18 +1,34 @@
 [
   {
-    "id": "5",
-    "name": "Budget Tracker",
-    "small_description": "A simple app to track expenses.",
-    "long_description": "A long app to track expenses.",
+    "id": "201",
+    "name": "Directory in C",
+    "small_description": "A terminal app to access data",
+    "long_description": "In my first year of BUT, I had to create a TUI (Terminal User Interface) for a directory that allowed accessing user telephone data. It was a two-person project, and for a first real dive into C, it actually went pretty well! At first, figuring out memory management and handling user input felt a bit overwhelming, but as we kept going, things started to click. I had a lot of fun experimenting, breaking things, and then fixing them. Looking back, it was a great learning experience, and I’m really glad I got to explore C in such a hands-on way!",
     "image": "https://via.placeholder.com/150",
-    "icon": "folder"
+    "icon": "c"
   },
   {
-    "id": "6",
-    "name": "Budget Tracker",
-    "small_description": "A simple app to track expenses.",
-    "long_description": "A long app to track expenses.",
+    "id": "202",
+    "name": "Coinche Online Game",
+    "small_description": "A card game in Svelte & Django Python.",
+    "long_description": "For my second year in BUT, I teamed up with three friends to build an app using a database. We decided to make a Coinche game since two of us were huge fans. It was my first time working with a web framework—and also when I discovered Svelte, which quickly became my favorite! The project was pretty challenging, especially handling WebSockets and all the connections (not exactly second-year basics 😅). But in the end, we were really proud of it, and honestly, I’m still a bit sad we didn’t keep it going!",
     "image": "https://via.placeholder.com/150",
-    "icon": "workout"
+    "icon": "coinche"
+  },
+  {
+    "id": "203",
+    "name": "Shopping List Website",
+    "small_description": "A simple Symfony application to do Shopping Lists",
+    "long_description": "In my second year of BUT, I teamed up with two colleagues to build a shopping list application using Symfony PHP. It was a really fun project because it made understanding the basics of back-end and front-end feel super intuitive. Setting up routes and integrating them with Twig was honestly pretty cool! We had a lot of freedom in how we approached the project, which let us push it way further than expected—something that really impressed our teacher. Overall, it was a great experience, and we had a blast working on it! Also, the name of the application was Maki Malin, which explains the Sushi logo.",
+    "image": "https://via.placeholder.com/150",
+    "icon": "maki"
+  },
+  {
+    "id": "204",
+    "name": "Kebab Vitrine Site",
+    "small_description": "My first Website Project",
+    "long_description": "In my first year of BUT, I had to create a showcase website for a kebab shop. We had a small cahier des charges but a lot of freedom to design it however we wanted, as long as it looked good and worked properly. There weren’t many features to implement—mainly just redirections—but for a first-year project, it was still a challenge! Honestly, it was a really cool experience, and I had a lot of fun working on it.",
+    "image": "https://via.placeholder.com/150",
+    "icon": "kebab"
   }
 ]
