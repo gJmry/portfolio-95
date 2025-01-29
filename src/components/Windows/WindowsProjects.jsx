@@ -17,10 +17,6 @@ import maki from "../../assets/images/projects/maki.png"
 import kebab from "../../assets/images/projects/kebab.png"
 
 export function WindowsProjects() {
-    const images = {
-
-    };
-
     const { windows, toggleWindow } = useWindowContext();
 
     if (!windows.Projects) return null;

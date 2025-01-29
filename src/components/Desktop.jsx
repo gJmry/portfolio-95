@@ -3,7 +3,6 @@ import { useWindowContext } from '../assets/scripts/WindowContext';
 import {
     CdMusic,
     Computer,
-    Explorer108,
     FileText,
     FlyingThroughSpace100,
     FolderExe2,
