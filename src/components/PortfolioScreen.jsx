@@ -7,6 +7,8 @@ import { WindowProvider } from '../assets/scripts/WindowContext.jsx';
 import {WindowsRecycleBin} from "./Windows/WindowsRecycleBin.jsx";
 import {WindowsProjects} from "./Windows/WindowsProjects.jsx";
 import {WindowsEducation} from "./Windows/WindowsEducation.jsx";
+import {WindowsSport} from "./Windows/WindowsSport.jsx";
+import {WindowsMusic} from "./Windows/WindowsMusic.jsx";
 
 const PortfolioContainer = styled.div`
     width: 100%;
@@ -32,6 +34,8 @@ const PortfolioScreen = () => {
                     <WindowsRecycleBin />
                     <WindowsProjects />
                     <WindowsEducation />
+                    <WindowsSport />
+                    <WindowsMusic />
                 </Content>
                 <Footer />
             </PortfolioContainer>

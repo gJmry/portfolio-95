@@ -21,6 +21,10 @@ export function WindowsProjects() {
 
     if (!windows.Projects) return null;
 
+    const images = [
+
+    ]
+
     const iconMap = {
         folder: <Folder variant="32x32_4"/>,
         workout: <span role="img" aria-label="workout">🏋️</span>,
@@ -52,7 +56,7 @@ export function WindowsProjects() {
         <>
             <WindowsComponent
                 title="Projects"
-                onClose={() => toggleWindow('Projects')}
+                F
             >
                 <Tabs value={activeTab} onChange={(value) => setActiveTab(value)}>
                     <Tab value={0}>Personal</Tab>
