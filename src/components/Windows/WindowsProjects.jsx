@@ -21,8 +21,6 @@ export function WindowsProjects() {
 
     if (!windows.Projects) return null;
 
-    const images = []
-
     const iconMap = {
         folder: <Folder variant="32x32_4"/>,
         workout: <span role="img" aria-label="workout">🏋️</span>,
@@ -106,14 +104,6 @@ export function WindowsProjects() {
                     ]}
                 >
                     <div style={{ textAlign: 'center', padding: '10px' }}>
-                        {images[project.image] && (
-                            <img
-                                src={images[project.image]}
-                                alt={`${project.name} preview`}
-                                style={{ width: '100%', height: 'auto', marginBottom: '10px' }}
-                            />
-                        )}
-
                         <p>{project.long_description}</p>
                     </div>
                 </WindowsComponent>

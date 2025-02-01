@@ -50,10 +50,10 @@ export function Footer() {
                             <MenuListItem style={{fontSize: '16px'}} onClick={() => handleClick('Projects')}>
                                 <FolderExe2 variant="32x32_4"/> Projects
                             </MenuListItem>
-                            <MenuListItem style={{fontSize: '16px'}} onClick={() => handleClick('CV')}>
+                            <MenuListItem style={{fontSize: '16px'}} onClick={() => handleClick('Experiences')}>
                                 <FlyingThroughSpace100 variant="32x32_4"/> Experiences
                             </MenuListItem>
-                            <MenuListItem style={{fontSize: '16px'}} onClick={() => handleClick('CV')}>
+                            <MenuListItem style={{fontSize: '16px'}} onClick={() => handleClick('Skills')}>
                                 <Star variant="32x32_4"/> Skills
                             </MenuListItem>
 
