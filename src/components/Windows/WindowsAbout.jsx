@@ -13,13 +13,8 @@ export function WindowsAbout() {
         <WindowsComponent
             title="About me"
             onClose={() => toggleWindow('About')}
-            footerContent={
-                <a href={cv} target="_blank" rel="noopener noreferrer">
-                    Download my CV !
-                </a>
-            }
         >
-            <p> My name is Jeremy Girard, and I'm a third-year Computer Science student at BUT Informatique, Lyon 1.
+            <p>Hi ! My name is Jeremy Girard, and I'm a third-year Computer Science student at BUT Informatique, Lyon 1.
                 This is my personal website—I hope you like it!</p>
             <br></br>
             <p>I love creating and always try to make the most of the tools at my disposal.
