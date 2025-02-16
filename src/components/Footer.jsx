@@ -45,7 +45,7 @@ export function Footer() {
                             onClick={() => setOpen(false)}
                         >
                             <MenuListItem style={{fontSize: '16px'}} onClick={() => handleClick('CV')}>
-                                <Comdlg32533 variant="32x32_4"/> Curriculum Vitae
+                                <Comdlg32533 variant="32x32_4"/> About Me
                             </MenuListItem>
                             <MenuListItem style={{fontSize: '16px'}} onClick={() => handleClick('Projects')}>
                                 <FolderExe2 variant="32x32_4"/> Projects

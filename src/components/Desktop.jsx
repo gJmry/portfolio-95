@@ -54,10 +54,10 @@ export const Desktop = () => {
             <div
                 className={activeIcon === 2 ? "active-icon desktop-icon" : "inactive-icon desktop-icon"}
                 onClick={() => handleToggleIcon(2)}
-                onDoubleClick={() => handleDoubleClick('CV')}
+                onDoubleClick={() => handleDoubleClick('About')}
             >
                 <FileText variant="32x32_4"/>
-                <p>Curriculum Vitae</p>
+                <p>About Me</p>
             </div>
             <div
                 className={activeIcon === 3 ? "active-icon desktop-icon" : "inactive-icon desktop-icon"}

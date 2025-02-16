@@ -51,11 +51,6 @@ const Wrapper = styled.div`
         }
     }
 
-    .window {
-        width: 400px;
-        min-height: 200px;
-    }
-
     .footer {
         display: block;
         margin: 0.25rem;

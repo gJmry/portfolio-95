@@ -25,19 +25,12 @@ export function WindowsExperiences() {
     const [selectedExp, setSelectedExp] = useState(null);
 
     const experiences = [
-        {year: '2023-2024', title: '📌 Alternance', desc: 'Alternance en développement web (React, Svelte, Go, etc.)'},
-        {year: '2023', title: '🛠 Stage', desc: 'Stage en développement web, premier projet pro'},
-        {
-            year: '2022',
-            title: '📝 Trésorier d\'association',
-            desc: 'Gestion des budgets et finances d\'une asso étudiante'
-        },
-        {
-            year: '2021',
-            title: '👔 Co-Président d\'association',
-            desc: 'Organisation d\'événements et gestion de l\'équipe'
-        },
-        {year: '2020', title: '📎 Secrétaire d\'association', desc: 'Prise de notes, gestion administrative'},
+        {year: '2022-2025', title: '📎 BUT Computer Science Lyon 1', desc: ''},
+        {year: '2022-2023', title: '📎 Association Secretary (BDE Info)', desc: 'Note-taking, administrative management'},
+        {year: '2023', title: '🛠 Full Stack Developer Internship', desc: 'Web development internship, first professional project in Symfony PHP at Onyl Rocks'},
+        {year: '2024', title: '👔 Co-President of an Association (Student Club)', desc: 'Event organization and team management'},
+        {year: '2023-2024', title: '📌 Full Stack Developer Apprenticeship', desc: 'Web development apprenticeship, using Symfony & Javascript, at Onyl Rocks'},
+        {year: '2024-2025', title: '📝 Association Treasurer (Student Club)', desc: 'Managing budgets and finances of a student association'},
     ];
 
     return (
@@ -54,7 +47,7 @@ export function WindowsExperiences() {
             </TabBody>
             <TabBody>
                 {selectedExp && (
-                    <div style={{height: 100, width: 300}}>
+                    <div style={{height: 200, width: 300}}>
                         <h3>{selectedExp.title}</h3>
                         <p>{selectedExp.desc}</p>
                         <Button onClick={() => setSelectedExp(null)}>Close</Button>

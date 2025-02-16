@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Footer } from './Footer.jsx';
-import { WindowsCV } from "./Windows/WindowsCV.jsx";
+import { WindowsAbout } from "./Windows/WindowsAbout.jsx";
 import { Desktop } from "./Desktop.jsx";
 import { WindowProvider } from '../assets/scripts/WindowContext.jsx';
 import {WindowsRecycleBin} from "./Windows/WindowsRecycleBin.jsx";
@@ -27,12 +27,12 @@ const Content = styled.div`
 `;
 
 const PortfolioScreen = () => {
-    return (
+        return (
         <WindowProvider>
             <PortfolioContainer>
                 <Content>
                     <Desktop />
-                    <WindowsCV />
+                    <WindowsAbout />
                     <WindowsRecycleBin />
                     <WindowsProjects />
                     <WindowsEducation />
