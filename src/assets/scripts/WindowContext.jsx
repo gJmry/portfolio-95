@@ -4,7 +4,7 @@ const WindowContext = createContext(undefined);
 
 export const WindowProvider = ({ children }) => {
     const [windows, setWindows] = useState({
-        About: false,
+        About: true,
         RecycleBin: false,
         Projects: false,
         Experiences: false,

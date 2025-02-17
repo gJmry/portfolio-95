@@ -13,24 +13,7 @@ export function WindowsMusic() {
 
     return (
         <WindowsComponent title="Music" onClose={() => toggleWindow('Music')}>
-            <Tabs value={activeTab} onChange={(value) => setActiveTab(value)}>
-                <Tab value={0}>My Instruments</Tab>
-                <Tab value={1}>My Musical Taste</Tab>
-            </Tabs>
-
-            <TabBody style={{ height: 300, padding: '10px', overflow: 'auto' }}>
-                {activeTab === 0 && (
-                    <div>
-                        <p>douze</p>
-                    </div>
-                )}
-
-                {activeTab === 1 && (
-                    <div>
-                        <p>douze</p>
-                    </div>
-                )}
-            </TabBody>
+            In construction !
         </WindowsComponent>
     );
 }
