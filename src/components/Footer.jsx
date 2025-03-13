@@ -58,7 +58,7 @@ export function Footer() {
                             </MenuListItem>
 
 
-                            <Separator />
+                            <Separator/>
                             <MenuListItem style={{fontSize: '16px'}} onClick={() => handleClick('Mail')}>
                                 <Progman23 variant="32x32_4"/> Contact Me
                             </MenuListItem>
@@ -67,13 +67,11 @@ export function Footer() {
                                     <Computer4 variant="32x32_4"/> My Github
                                 </MenuListItem>
                             </a>
-                            <a href={""} target={"_blank"}>
-                                <MenuListItem style={{fontSize: '14px'}} onClick={() => handleClick('Instagram')}>
-                                    <Shell32166 variant="32x32_4"/> My Instagram
-                                </MenuListItem>
-                            </a>
+                            <MenuListItem style={{fontSize: '14px'}} onClick={() => handleClick('Instagram')}>
+                                <Shell32166 variant="32x32_4"/> My Instagram
+                            </MenuListItem>
                         </MenuList>
-                        )}
+                    )}
                 </div>
                 <div>
                     Made with
