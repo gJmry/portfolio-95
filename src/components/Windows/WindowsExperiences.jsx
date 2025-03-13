@@ -29,9 +29,9 @@ export function WindowsExperiences() {
         {year: '2022-2023', title: '🤝 Association Secretary (BDE Info)', desc: 'Responsible for keeping detailed minutes of meetings, overseeing administrative tasks, and facilitating communication within the student body.'},
         {year: '2023', title: '🖥️ Full Stack Developer Internship', desc: 'Completed an immersive web development internship where I worked on my first professional project using Symfony PHP at Onyl Rocks, enhancing my programming skills and teamwork experience.'},
         {year: '2023-2024', title: '👨‍💻 Full Stack Developer Apprenticeship', desc: 'Engaged in a hands-on apprenticeship focused on web development with a strong emphasis on Symfony and JavaScript at Onyl Rocks, further developing my coding proficiency and real-world application capabilities.'},
-        {year: '2024-2026', title: '🔗 Elected IUT UFR Representative', desc: 'Serving as an elected representative for the IUT UFR, advocating for student interests and fostering communication between students and faculty.'},
         {year: '2024', title: '🌟 Co-President of a Student Association', desc: 'Led a team in organizing various student events, promoting engagement, and fostering community spirit within the university, while developing leadership and organizational skills.'},
-        {year: '2024-2025', title: '💰 Association Treasurer (Student Club)', desc: 'Oversaw the financial management of the student association, including budgeting and expense tracking, ensuring transparency and responsible spending.'}
+        {year: '2024-2025', title: '💰 Association Treasurer (Student Club)', desc: 'Oversaw the financial management of the student association, including budgeting and expense tracking, ensuring transparency and responsible spending.'},
+        {year: '2024-2026', title: '🔗 Elected IUT UFR Representative', desc: 'Serving as an elected representative for the IUT UFR, advocating for student interests and fostering communication between students and faculty.'},
     ];
 
     return (
