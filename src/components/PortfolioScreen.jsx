@@ -18,6 +18,8 @@ const PortfolioContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    background-size: cover;
+    background-image: url("https://cdn.wallpaperhub.app/cloudcache/9/8/1/e/8/e/981e8e91f90c93bf5e715527e1922724645f1214.jpg");
     color: white;
 `;
 
