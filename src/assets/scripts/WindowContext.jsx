@@ -12,6 +12,7 @@ export const WindowProvider = ({ children }) => {
         Education: false,
         Sport: false,
         Skills: false,
+        OnylRocks: false,
     });
 
     const toggleWindow = (windowName) => {

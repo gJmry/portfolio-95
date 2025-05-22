@@ -6,10 +6,11 @@ import {
     FileText,
     FlyingThroughSpace100,
     FolderExe2,
-    Joy102,
-    RecycleFull,
+    Joy102, RecycleFull,
     Star
 } from "@react95/icons";
+
+import onyl from "../assets/images/onyl.png"
 
 export const Desktop = () => {
     const { toggleWindow } = useWindowContext();
@@ -106,6 +107,14 @@ export const Desktop = () => {
             >
                 <FlyingThroughSpace100 variant="32x32_4"/>
                 <p>Experiences</p>
+            </div>
+            <div
+                className={activeIcon === 8 ? "active-icon desktop-icon" : "inactive-icon desktop-icon"}
+                onClick={() => handleToggleIcon(9)}
+                onDoubleClick={() => handleDoubleClick('OnylRocks')}
+            >
+                <img src={onyl} alt={"Onyl Rocks"} style={{width: "32px", height: "32px"}} />
+                <p>Onyl Rocks</p>
             </div>
         </div>
     );
