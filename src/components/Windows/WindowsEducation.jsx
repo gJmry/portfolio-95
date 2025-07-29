@@ -71,6 +71,8 @@ const SkillChip = styled.div`
 const DetailPanel = styled(Panel)`
     margin-top: 10px;
     padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
 `;
 
 const ProgressContainer = styled.div`
