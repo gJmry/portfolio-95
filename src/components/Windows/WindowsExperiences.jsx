@@ -113,8 +113,8 @@ export function WindowsExperiences() {
         },
         {
             year: '2024',
-            title: '🌟 Co-President of a Student Association',
-            desc: 'Led a team in organizing various student events, promoting engagement, and fostering community spirit within the university. Developed leadership and organizational skills while managing a team of 15+ volunteers and coordinating events for 200+ students.',
+            title: '🌟 Co-President of Student Club',
+            desc: 'Led a team in organizing various student events, promoting engagement, and fostering community spirit within the university. Developed leadership and organizational skills while managing a team of 12 volunteers    and coordinating events for 200+ students.',
             type: 'leadership'
         },
         {
@@ -144,7 +144,7 @@ export function WindowsExperiences() {
 
     return (
         <WindowsComponent
-            title="📜 Professional Experiences"
+            title="📜 University Experiences"
             onClose={() => toggleWindow('Experiences')}
             defaultPosition={{ x: 150, y: 100, width: 700, height: 500 }}
         >
@@ -176,11 +176,6 @@ export function WindowsExperiences() {
                                 <DetailDescription>
                                     {selectedExp.desc}
                                 </DetailDescription>
-                                <ActionBar>
-                                    <Button onClick={() => setSelectedExp(null)}>
-                                        Close Details
-                                    </Button>
-                                </ActionBar>
                             </>
                         ) : (
                             <PlaceholderText>
