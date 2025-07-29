@@ -71,12 +71,9 @@ const DetailTitle = styled.h3`
 const DetailDescription = styled.div`
     flex: 1;
     padding: 15px;
-    font-weight: 600;
-    background: bisque;  
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.5;
     overflow-y: auto;
-    color: #000000;
     text-shadow: none;
 `;
 const PlaceholderText = styled.div`
