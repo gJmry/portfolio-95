@@ -11,7 +11,7 @@ export function WindowsInternshipOnylRocks() {
         <WindowsComponent
             defaultPosition={{ x: 150, y: 150, width: 500, height: 500 }}
             title="Internship Onyl Rocks"
-            onClose={() => toggleWindow('Internship')}
+            onClose={() => toggleWindow('OnylRocks')}
         >
             <div style={{ overflow: 'auto', height: 300 }}>
                 <p>
