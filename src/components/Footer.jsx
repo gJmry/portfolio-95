@@ -80,6 +80,10 @@ export function Footer() {
                     </Tooltip>
                     using React & React95
                 </div>
+
+                <div>
+                    © Jérémy Girard - 2025
+                </div>
             </Toolbar>
         </AppBar>
     );
