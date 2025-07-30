@@ -134,35 +134,21 @@ const calculateProgress = (startYear, endYear) => {
 
 const educationTimeline = [
     {
-        id: 1,
-        year: "🎓 High School Diploma",
-        period: "2019-2022",
-        startYear: 2019,
-        endYear: 2022,
+        id: 4,
+        year: "🏛️ BUT Computer Science - 3rd Year",
+        period: "2024-2025",
+        startYear: 2024,
+        endYear: 2025,
         details: [
-            "🏅 Mention Bien (Good Honors)",
-            "💻 Major: Digital & Computer Science (SIN)",
-            "📐 Mathematics Specialization",
-            "🔬 Physics & Engineering Fundamentals"
+            "🅰️ Angular Enterprise Applications",
+            "🌱 Spring Boot Microservices",
+            "📊 Advanced Project Management",
+            "🍃 NoSQL Databases (MongoDB)",
+            "🔧 DevOps & CI/CD Practices",
+            "📱 Mobile Development Concepts"
         ],
-        skills: ["HTML", "CSS", "Python", "Arduino", "Electronics"],
-        description: "Graduated with honors in Digital & Computer Science track, building foundational programming and engineering skills."
-    },
-    {
-        id: 2,
-        year: "🏛️ BUT Computer Science - 1st Year",
-        period: "2022-2023",
-        startYear: 2022,
-        endYear: 2023,
-        details: [
-            "🔵 C Programming Fundamentals",
-            "☕ Java Object-Oriented Programming",
-            "🎨 Web Technologies (HTML/CSS)",
-            "📊 Business & Accounting Principles",
-            "🗄️ Database Design & SQL"
-        ],
-        skills: ["C", "Java", "HTML/CSS", "SQL", "Git", "Linux"],
-        description: "First year focused on programming fundamentals, introducing core computer science concepts and business knowledge."
+        skills: ["Angular", "Spring Boot", "MongoDB", "Docker", "Jenkins", "Agile"],
+        description: "Final year emphasizing enterprise-level development, microservices architecture, and professional practices."
     },
     {
         id: 3,
@@ -182,23 +168,38 @@ const educationTimeline = [
         description: "Advanced web development year with focus on full-stack technologies and modern frameworks."
     },
     {
-        id: 4,
-        year: "🏛️ BUT Computer Science - 3rd Year",
-        period: "2024-2025",
-        startYear: 2024,
-        endYear: 2025,
+        id: 2,
+        year: "🏛️ BUT Computer Science - 1st Year",
+        period: "2022-2023",
+        startYear: 2022,
+        endYear: 2023,
         details: [
-            "🅰️ Angular Enterprise Applications",
-            "🌱 Spring Boot Microservices",
-            "📊 Advanced Project Management",
-            "🍃 NoSQL Databases (MongoDB)",
-            "🔧 DevOps & CI/CD Practices",
-            "📱 Mobile Development Concepts"
+            "🔵 C Programming Fundamentals",
+            "☕ Java Object-Oriented Programming",
+            "🎨 Web Technologies (HTML/CSS)",
+            "📊 Business & Accounting Principles",
+            "🗄️ Database Design & SQL"
         ],
-        skills: ["Angular", "Spring Boot", "MongoDB", "Docker", "Jenkins", "Agile"],
-        description: "Final year emphasizing enterprise-level development, microservices architecture, and professional practices."
+        skills: ["C", "Java", "HTML/CSS", "SQL", "Git", "Linux"],
+        description: "First year focused on programming fundamentals, introducing core computer science concepts and business knowledge."
+    },
+    {
+        id: 1,
+        year: "🎓 High School Diploma",
+        period: "2019-2022",
+        startYear: 2019,
+        endYear: 2022,
+        details: [
+            "🏅 Mention Bien (Good Honors)",
+            "💻 Major: Digital & Computer Science (SIN)",
+            "📐 Mathematics Specialization",
+            "🔬 Physics & Engineering Fundamentals"
+        ],
+        skills: ["HTML", "CSS", "Python", "Arduino", "Electronics"],
+        description: "Graduated with honors in Digital & Computer Science track, building foundational programming and engineering skills."
     }
 ];
+
 
 export function WindowsEducation() {
     const {windows, toggleWindow} = useWindowContext();
