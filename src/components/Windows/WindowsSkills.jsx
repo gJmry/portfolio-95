@@ -202,7 +202,37 @@ export function WindowsSkills() {
                 description: "Confidence in public presentation. Sharing technical knowledge, running workshops, and participating in tech events.",
                 projects: "Student conferences, technical workshops"
             }
-        ]
+        ],
+        but: [
+            {
+                name: "Bon absolument rien y a quoi maintenant",
+                context: "personal",
+                description: "ça schlinue sa tante",
+                projects: "y en a pas non plus de projets",
+
+            },
+            {
+                name: "Bon absolument rien y a quoi maintenant",
+                context: "personal",
+                description: "ça schlinue sa tante",
+                projects: "y en a pas non plus de projets",
+
+            },
+            {
+                name: "Bon absolument rien y a quoi maintenant",
+                context: "personal",
+                description: "ça schlinue sa tante",
+                projects: "y en a pas non plus de projets",
+
+            },
+            {
+                name: "Bon absolument rien y a quoi maintenant",
+                context: "personal",
+                description: "ça schlinue sa tante",
+                projects: "y en a pas non plus de projets",
+
+            },
+        ],
     };
 
     const handleSkillClick = (skill) => {
@@ -221,6 +251,7 @@ export function WindowsSkills() {
                                 onClick={() => onSkillClick(skill)}
                                 $active={selectedSkill?.name === skill.name}
                             >
+
                                 <div>{skill.name}</div>
                                 <ContextBadge>
                                     {skill.context === 'personal' ? 'PERSONAL' : 'UNIVERSITY'}
@@ -275,6 +306,7 @@ export function WindowsSkills() {
                 <Tab value={1}>Backend</Tab>
                 <Tab value={2}>DevOps</Tab>
                 <Tab value={3}>Soft Skills</Tab>
+                <Tab value={4}>BUT Informatique</Tab>
             </Tabs>
 
             <TabBody style={{ height: '100%', padding: '15px', display: 'flex', flexDirection: 'column' }}>
@@ -306,6 +338,14 @@ export function WindowsSkills() {
                     <SkillTabContent
                         title="💡 Soft Skills"
                         skills={skills.softskills}
+                        selectedSkill={selectedSkill}
+                        onSkillClick={handleSkillClick}
+                    />
+                )}
+                {activeTab === 4 && (
+                    <SkillTabContent
+                        title="BUT"
+                        skills={skills.but}
                         selectedSkill={selectedSkill}
                         onSkillClick={handleSkillClick}
                     />
