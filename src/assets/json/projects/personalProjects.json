@@ -30,5 +30,21 @@
     "long_description": "At some point in my dev journey, I thought, 'Why not make a blog to share my ideas?' There’s not much on it yet, but I’m hoping to add more this year. It’s super fun to work on, and it feels like a cool little milestone in my career!",
     "github": "https://github.com/gJmry/RayCaster",
     "icon": "book"
+  },
+  {
+    "id": "5",
+    "name": "Celeste File Watcher",
+    "small_description": "A fullstack Svelte app to explore Celeste save files",
+    "long_description": "Celeste is a well-known indie platformer game that uses XML files for its save system. For this project, I built a fullstack application entirely with Svelte where users could upload their Celeste save file and instantly see all the information it contained—both visible and hidden. To make it work, I had to parse the XML structure and really dive into how the game handled saves, which I found fascinating. This project was a great way to combine front-end and back-end logic while exploring how game data is stored behind the scenes.",
+    "github": "https://github.com/gJmry/celeste-file-watcher",
+    "icon": "gamepad"
+  },
+  {
+    "id": "6",
+    "name": "Procedural World Generation",
+    "small_description": "Procedural world generation in Rust with Perlin noise",
+    "long_description": "This project is all about procedural world generation based on parameters like temperature and dryness. It creates a full world map with different biomes and takes into account height, width, and length. I implemented everything in Rust using Perlin noise to generate realistic terrain. On top of that, I connected it to a Svelte front end to display the map using colored divs to represent the different biomes. Originally, I wanted to make a full 3D rendering with Threlte (a 3D library for Svelte), but I didn’t have the motivation to finish that part. Still, it was a great learning experience that combined low-level generation logic with a front-end visualization.",
+    "github": "https://github.com/gJmry/procedural-world-generation",
+    "icon": "globe"
   }
 ]

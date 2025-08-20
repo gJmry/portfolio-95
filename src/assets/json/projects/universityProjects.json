@@ -17,7 +17,7 @@
   },
   {
     "id": "203",
-    "name": "Shopping List Website",
+    "name": "Maki-Malin",
     "small_description": "A simple Symfony application to do Shopping Lists",
     "long_description": "In my second year of BUT, I teamed up with two colleagues to build a shopping list application using Symfony PHP. It was a really fun project because it made understanding the basics of back-end and front-end feel super intuitive. Setting up routes and integrating them with Twig was honestly pretty cool! We had a lot of freedom in how we approached the project, which let us push it way further than expected—something that really impressed our teacher. Overall, it was a great experience, and we had a blast working on it! Also, the name of the application was Maki Malin, which explains the Sushi logo.",
     "image": "https://via.placeholder.com/150",
@@ -30,5 +30,13 @@
     "long_description": "In my first year of BUT, I had to create a showcase website for a kebab shop. We had a small cahier des charges but a lot of freedom to design it however we wanted, as long as it looked good and worked properly. There weren’t many features to implement—mainly just redirections—but for a first-year project, it was still a challenge! Honestly, it was a really cool experience, and I had a lot of fun working on it.",
     "image": "https://via.placeholder.com/150",
     "icon": "kebab"
+  },
+  {
+    "id": "205",
+    "name": "Management ERP for the IUT",
+    "small_description": "Main project of my 3rd year in BUT Informatique",
+    "long_description": "Development of a management ERP for the IUT using Spring Boot and Angular, enabling the management of timetables, grades, absences, and other administrative modules. This project taught me how to build a full-stack application from A to Z within a team of 17 people. I mainly worked on the user management module.",
+    "image": "https://via.placeholder.com/150",
+    "icon": "erp"
   }
 ]

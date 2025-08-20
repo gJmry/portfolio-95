@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {useWindowContext} from '../../assets/scripts/WindowContext.jsx';
 import {WindowsComponent} from './WindowsComponent.jsx';
-import {Button, GroupBox, Tab, TabBody, Tabs, Separator, Panel} from "react95";
-import {ComputerFind, Folder} from "@react95/icons";
+import {Button, GroupBox, Tab, Tabs} from "react95";
+import {ComputerFind, Earth, FileTextSettings, Folder, Joy110} from "@react95/icons";
 import personalProjects from "../../assets/json/projects/personalProjects.json";
 import universityProjects from "../../assets/json/projects/universityProjects.json";
 import collaborativeProjects from "../../assets/json/projects/collaborativeProjects.json";
@@ -186,6 +186,9 @@ export function WindowsProjects() {
         coinche: <img src={coinche} alt="Coinche Logo"/>,
         maki: <img src={maki} alt="Maki Malin Logo"/>,
         kebab: <img src={kebab} alt="Kebab Logo"/>,
+        globe: <Earth variant="32x32_4"/>,
+        gamepad: <Joy110 variant="32x32_4"/>,
+        erp: <FileTextSettings variant="32x32_4"/>
     };
 
     const [openProjects, setOpenProjects] = useState([]);
@@ -206,7 +209,7 @@ export function WindowsProjects() {
     return (
         <>
             <WindowsComponent
-                title="💼 Projects Portfolio"
+                title="💼 Projects"
                 onClose={() => toggleWindow('Projects')}
                 defaultPosition={{ x: 150, y: 80, width: 900, height: 650 }}
             >

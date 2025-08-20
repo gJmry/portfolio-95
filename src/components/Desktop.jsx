@@ -109,7 +109,7 @@ export const Desktop = () => {
                 <p>Experiences</p>
             </div>
             <div
-                className={activeIcon === 8 ? "active-icon desktop-icon" : "inactive-icon desktop-icon"}
+                className={activeIcon === 9 ? "active-icon desktop-icon" : "inactive-icon desktop-icon"}
                 onClick={() => handleToggleIcon(9)}
                 onDoubleClick={() => handleDoubleClick('OnylRocks')}
             >
