@@ -59,17 +59,23 @@ export function Footer() {
 
 
                             <Separator/>
-                            <MenuListItem style={{fontSize: '16px'}} onClick={() => handleClick('Mail')}>
-                                <Progman23 variant="32x32_4"/> Contact Me
-                            </MenuListItem>
+                            <a href={"https://fr.linkedin.com/in/j%C3%A9r%C3%A9my-girard-b554b6251?trk=public_profile_browsemap"} target={"_blank"}>
+                                <MenuListItem style={{fontSize: '16px'}} onClick={() => handleClick('Mail')}>
+                                    <Progman23 variant="32x32_4"/> Contact Me
+                                </MenuListItem>
+                            </a>
                             <a href={"https://github.com/gJmry"} target={"_blank"}>
                                 <MenuListItem style={{fontSize: '16px'}} onClick={() => handleClick('Github')}>
                                     <Computer4 variant="32x32_4"/> My Github
                                 </MenuListItem>
                             </a>
-                            <MenuListItem style={{fontSize: '14px'}} onClick={() => handleClick('Instagram')}>
-                                <Shell32166 variant="32x32_4"/> My Instagram
-                            </MenuListItem>
+                            <a href={"https://www.instagram.com/jemery_girard?igsh=MWZlNnppanZjNHBtMQ=="}
+                               target={"_blank"}>
+                                <MenuListItem style={{fontSize: '14px'}}
+                                              onClick={() => handleClick('Instagram')}>
+                                    <Shell32166 variant="32x32_4"/> My Instagram
+                                </MenuListItem>
+                            </a>
                         </MenuList>
                     )}
                 </div>
