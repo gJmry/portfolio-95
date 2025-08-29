@@ -34,7 +34,7 @@
   {
     "id": "205",
     "name": "Management ERP for the IUT",
-    "small_description": "Main project of my 3rd year in BUT Informatique",
+    "small_description": "Main project of my 3rd year in Bachelor of Technology in Computer Science",
     "long_description": "Development of a management ERP for the IUT using Spring Boot and Angular, enabling the management of timetables, grades, absences, and other administrative modules. This project taught me how to build a full-stack application from A to Z within a team of 17 people. I mainly worked on the user management module.",
     "image": "https://via.placeholder.com/150",
     "icon": "erp"

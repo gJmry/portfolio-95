@@ -207,138 +207,138 @@ export function WindowsSkills() {
         ],
         "but": [
             {
-                "name": "Compétence 1 : Réaliser un développement d'application",
+                "name": "Skill 1: Develop an application",
                 "context": "BUT",
-                "description": "Concevoir et implémenter des applications en respectant des spécifications, en garantissant l'accessibilité, la qualité et l'intégration en production.",
+                "description": "Design and implement applications while following specifications, ensuring accessibility, quality, and production integration.",
                 "levels": {
-                    "Niveau 1": [
-                        "Implémenter des conceptions simples",
-                        "Élaborer des conceptions simples",
-                        "Faire des essais et évaluer leurs résultats en regard des spécifications",
-                        "Développer des interfaces utilisateurs"
+                    "Level 1": [
+                        "Implement simple designs",
+                        "Create simple designs",
+                        "Conduct tests and evaluate their results against specifications",
+                        "Develop user interfaces"
                     ],
-                    "Niveau 2": [
-                        "Élaborer et implémenter les spécifications fonctionnelles et non fonctionnelles à partir des exigences",
-                        "Appliquer des principes d'accessibilité et d'ergonomie",
-                        "Adopter de bonnes pratiques de conception et de programmation",
-                        "Utiliser des patrons de conception pour le développement d'applications cohérentes",
-                        "Adapter les solutions existantes au contexte applicatif",
-                        "Vérifier et valider la qualité de l'application par les tests"
+                    "Level 2": [
+                        "Design and implement functional and non-functional specifications based on requirements",
+                        "Apply accessibility and usability principles",
+                        "Adopt good design and programming practices",
+                        "Use design patterns to develop consistent applications",
+                        "Adapt existing solutions to the application context",
+                        "Verify and validate application quality through testing"
                     ],
-                    "Niveau 3": [
-                        "Choisir et implémenter les architectures adaptées",
-                        "Développer des applications sur des supports spécifiques",
-                        "Réaliser un audit d'une application",
-                        "Intégrer des solutions dans un environnement de production"
+                    "Level 3": [
+                        "Select and implement appropriate architectures",
+                        "Develop applications on specific platforms",
+                        "Conduct an application audit",
+                        "Integrate solutions into a production environment"
                     ]
-                },
+                }
             },
             {
-                "name": "Compétence 2 : Optimiser des applications informatiques",
+                "name": "Skill 2: Optimize computer applications",
                 "context": "BUT",
-                "description": "Analyser, comparer et améliorer les performances d'applications informatiques en choisissant des structures et des algorithmes adaptés, tout en tenant compte des enjeux sociétaux et environnementaux.",
+                "description": "Analyze, compare, and improve the performance of computer applications by selecting appropriate data structures and algorithms, while considering social and environmental issues.",
                 "levels": {
-                    "Niveau 1": [
-                        "Analyser un problème avec méthode (découpage en éléments algorithmiques simples, structure de données...)",
-                        "Comparer des algorithmes pour des problèmes classiques (tris simples, recherche...)",
-                        "Expérimenter la notion de compilation et les représentations bas niveau des données",
-                        "Formaliser et mettre en œuvre des outils mathématiques pour l’informatique"
+                    "Level 1": [
+                        "Analyze a problem methodically (break it down into simple algorithmic elements, data structures, etc.)",
+                        "Compare algorithms for common problems (basic sorting, searching, etc.)",
+                        "Experiment with compilation concepts and low-level data representations",
+                        "Formalize and apply mathematical tools for computer science"
                     ],
-                    "Niveau 2": [
-                        "Choisir des structures de données complexes adaptées au problème",
-                        "Utiliser des techniques algorithmiques adaptées pour des problèmes complexes (par ex. recherche opérationnelle, méthodes arborescentes, optimisation globale, intelligence artificielle...)",
-                        "Appréhender la différence entre les paradigmes de programmation",
-                        "Comprendre les enjeux et moyens de sécurisation des données et du code",
-                        "Évaluer l’impact environnemental et sociétal des solutions proposées"
+                    "Level 2": [
+                        "Select complex data structures appropriate to the problem",
+                        "Apply suitable algorithmic techniques for complex problems (e.g., operations research, tree methods, global optimization, artificial intelligence, etc.)",
+                        "Understand the differences between programming paradigms",
+                        "Understand the issues and methods for securing data and code",
+                        "Evaluate the environmental and social impact of proposed solutions"
                     ],
-                    "Niveau 3": [
-                        "Anticiper les résultats de diverses métriques (temps d’exécution, occupation mémoire...)",
-                        "Profiler et analyser le comportement d’un code existant",
-                        "Appliquer des méthodes de calcul scientifique (imagerie, immersion, intelligence artificielle, jeux vidéos, parallélisme, calcul formel...)",
-                        "Identifier les solutions techniques pour gérer la montée en charge des applications"
+                    "Level 3": [
+                        "Anticipate results of various metrics (execution time, memory usage, etc.)",
+                        "Profile and analyze the behavior of existing code",
+                        "Apply scientific computing methods (imaging, simulation, AI, video games, parallelism, symbolic computation, etc.)",
+                        "Identify technical solutions to manage application scalability"
                     ]
-                },
+                }
             },
             {
-                "name": "Compétence 3 : Administrer des systèmes informatiques communicants complexes",
+                "name": "Skill 3: Administer complex computer systems and networks",
                 "context": "BUT",
-                "description": "Installer, configurer, sécuriser et administrer des systèmes et réseaux afin de garantir leur bon fonctionnement dans des environnements complexes.",
+                "description": "Install, configure, secure, and manage systems and networks to ensure proper operation in complex environments.",
                 "levels": {
-                    "Niveau 1": [
-                        "Identifier les différents composants (matériels et logiciels) d’un système numérique",
-                        "Utiliser les fonctionnalités de base d’un système multitâches / multiutilisateurs",
-                        "Installer et configurer un système d’exploitation et des outils de développement",
-                        "Configurer un poste de travail dans un réseau d’entreprise"
+                    "Level 1": [
+                        "Identify the different components (hardware and software) of a digital system",
+                        "Use the basic features of a multitasking / multi-user system",
+                        "Install and configure an operating system and development tools",
+                        "Set up a workstation within a corporate network"
                     ],
-                    "Niveau 2": [
-                        "Concevoir et développer des applications communicantes",
-                        "Utiliser des serveurs et des services réseaux virtualisés",
-                        "Sécuriser les services et données d’un système",
-                        "Rédiger une documentation technique (en français et en anglais)"
+                    "Level 2": [
+                        "Design and develop networked applications",
+                        "Use servers and virtualized network services",
+                        "Secure a system’s services and data",
+                        "Write technical documentation (in French and English)"
                     ]
-                },
+                }
             },
             {
-                "name": "Compétence 4 : Gérer des données de l’information",
+                "name": "Skill 4: Manage information data",
                 "context": "BUT",
-                "description": "Concevoir, interroger, sécuriser et exploiter des bases de données afin de transformer l’information en ressource utile pour l’entreprise.",
+                "description": "Design, query, secure, and use databases to transform information into a valuable resource for the organization.",
                 "levels": {
-                    "Niveau 1": [
-                        "Mettre à jour et interroger une base de données relationnelle (en requêtes directes ou à travers une application)",
-                        "Visualiser des données",
-                        "Concevoir une base de données relationnelle à partir d'un cahier des charges"
+                    "Level 1": [
+                        "Update and query a relational database (direct queries or through an application)",
+                        "Visualize data",
+                        "Design a relational database from a set of requirements"
                     ],
-                    "Niveau 2": [
-                        "Optimiser les modèles de données de l’entreprise",
-                        "Assurer la confidentialité des données (intégrité et sécurité)",
-                        "Organiser la restitution de données à travers la programmation et la visualisation",
-                        "Manipuler des données hétérogènes"
+                    "Level 2": [
+                        "Optimize the company’s data models",
+                        "Ensure data confidentiality (integrity and security)",
+                        "Organize data output through programming and visualization",
+                        "Handle heterogeneous data"
                     ]
-                },
+                }
             },
             {
-                "name": "Compétence 5 : Conduire un projet",
+                "name": "Skill 5: Manage a project",
                 "context": "BUT",
-                "description": "Planifier, organiser et piloter un projet informatique en tenant compte des besoins des utilisateurs, des contraintes organisationnelles et des critères de faisabilité.",
+                "description": "Plan, organize, and lead an IT project by considering user needs, organizational constraints, and feasibility criteria.",
                 "levels": {
-                    "Niveau 1": [
-                        "Appréhender les besoins du client et de l'utilisateur",
-                        "Mettre en place les outils de gestion de projet",
-                        "Identifier les acteurs et les différentes phases d'un cycle de développement"
+                    "Level 1": [
+                        "Understand client and user needs",
+                        "Set up project management tools",
+                        "Identify stakeholders and the different phases of a development cycle"
                     ],
-                    "Niveau 2": [
-                        "Identifier les processus présents dans une organisation en vue d’améliorer les systèmes d’information",
-                        "Formaliser les besoins du client et de l'utilisateur",
-                        "Identifier les critères de faisabilité d’un projet informatique",
-                        "Définir et mettre en œuvre une démarche de suivi de projet"
+                    "Level 2": [
+                        "Identify processes within an organization to improve information systems",
+                        "Formalize client and user needs",
+                        "Identify feasibility criteria of an IT project",
+                        "Define and implement a project monitoring process"
                     ]
-                },
+                }
             },
             {
-                "name": "Compétence 6 : Travailler dans une équipe informatique",
+                "name": "Skill 6: Work in an IT team",
                 "context": "BUT",
-                "description": "Collaborer efficacement au sein d’une équipe informatique en mobilisant des compétences interpersonnelles, en comprenant les enjeux organisationnels et en participant à la conduite du changement.",
+                "description": "Collaborate effectively within an IT team by leveraging interpersonal skills, understanding organizational challenges, and contributing to change management.",
                 "levels": {
-                    "Niveau 1": [
-                        "Appréhender l’écosystème numérique",
-                        "Découvrir les aptitudes requises selon les différents secteurs informatiques",
-                        "Identifier les statuts, les fonctions et les rôles de chaque membre d’une équipe pluridisciplinaire",
-                        "Acquérir les compétences interpersonnelles pour travailler en équipe"
+                    "Level 1": [
+                        "Understand the digital ecosystem",
+                        "Discover the required skills for different IT sectors",
+                        "Identify the statuses, functions, and roles of each member of a multidisciplinary team",
+                        "Develop interpersonal skills to work in a team"
                     ],
-                    "Niveau 2": [
-                        "Comprendre la diversité, la structure et la dimension de l’informatique dans une organisation (ESN, DSI, ...)",
-                        "Appliquer une démarche pour intégrer une équipe informatique au sein d’une organisation",
-                        "Mobiliser les compétences interpersonnelles pour travailler dans une équipe informatique",
-                        "Rendre compte de son activité professionnelle"
+                    "Level 2": [
+                        "Understand the diversity, structure, and scope of IT in an organization (IT services companies, IT departments, etc.)",
+                        "Apply a process to integrate into an IT team within an organization",
+                        "Leverage interpersonal skills to work in an IT team",
+                        "Report on professional activities"
                     ],
-                    "Niveau 3": [
-                        "Organiser et partager une veille technologique et informationnelle",
-                        "Identifier les enjeux de l’économie de l’innovation",
-                        "Guider la conduite du changement informatique au sein d’une organisation"
+                    "Level 3": [
+                        "Organize and share technological and informational monitoring",
+                        "Identify innovation economy issues",
+                        "Guide IT change management within an organization"
                     ]
-                },
+                }
             }
-        ],
+        ]
     };
 
     const handleSkillClick = (skill) => {
@@ -432,21 +432,18 @@ export function WindowsSkills() {
 
                     {!selectedSkill && (
                         <DescriptionPanel style={{marginTop: '15px'}}>
-                            <SkillTitle>👆 Cliquez sur une compétence pour voir les détails</SkillTitle>
+                            <SkillTitle>👆 Click on a skill to see the details</SkillTitle>
                             <Divider/>
                             <SkillDescription>
-                                <strong>PERSONAL:</strong> Compétences acquises par passion personnelle, projets
-                                individuels ou expérience professionnelle.
+                                <strong>PERSONAL:</strong> Skills acquired through personal passion, individual projects, or professional experience.
                             </SkillDescription>
                             <br/>
                             <SkillDescription>
-                                <strong>UNIVERSITY:</strong> Compétences développées à travers les cours universitaires,
-                                projets académiques ou formation supervisée.
+                                <strong>UNIVERSITY:</strong> Skills developed through university courses, academic projects, or supervised training.
                             </SkillDescription>
                             <br/>
                             <SkillDescription>
-                                <strong>BUT:</strong> Compétences du référentiel BUT Informatique avec niveaux de
-                                progression définis.
+                                <strong>BUT:</strong> Skills from the Computer Science BUT curriculum with defined progression levels.
                             </SkillDescription>
                         </DescriptionPanel>
                     )}
@@ -466,7 +463,7 @@ export function WindowsSkills() {
                 <Tab value={1}>Backend</Tab>
                 <Tab value={2}>DevOps</Tab>
                 <Tab value={3}>Soft Skills</Tab>
-                <Tab value={4}>BUT Informatique</Tab>
+                <Tab value={4}>Computer Science BUT</Tab>
             </Tabs>
 
             <TabBody style={{height: '100%', padding: '15px'}}>
