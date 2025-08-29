@@ -120,7 +120,7 @@ const ProgressLabel = styled.div`
 `;
 const calculateProgress = (startYear, endYear) => {
     const startDate = new Date(`${startYear}-09-01`);
-    const endDate = new Date(`${endYear}-09-01`);
+    const endDate = new Date(`${endYear}-8-31`);
     const today = new Date();
 
     if (today <= startDate) return 0;
@@ -133,6 +133,20 @@ const calculateProgress = (startYear, endYear) => {
 
 
 const educationTimeline = [
+    {
+        id: 5,
+        year: "🏛️ Engineering School - CPE Lyon (Computer Science & Communication Networks)",
+        period: "2025-2028",
+        startYear: 2025,
+        endYear: 2028,
+        details: [
+            "📚 Courses and projects to be defined",
+            "🔬 Specialization in Computer Science & Communication Networks",
+            "🌐 Advanced engineering training"
+        ],
+        skills: ["Computer Science", "Networks", "Engineering"],
+        description: "Beginning a new journey at CPE Lyon in Computer Science & Communication Networks. Courses and skills will be defined as the program progresses."
+    },
     {
         id: 4,
         year: "🏛️ BUT Computer Science - 3rd Year",
@@ -147,7 +161,7 @@ const educationTimeline = [
             "🔧 DevOps & CI/CD Practices",
             "📱 Mobile Development Concepts"
         ],
-        skills: ["Angular", "Spring Boot", "MongoDB", "Docker", "Jenkins", "Agile"],
+        skills: ["Angular", "Spring Boot", "MongoDB", "Docker", "Kubernetes", "Agile"],
         description: "Final year emphasizing enterprise-level development, microservices architecture, and professional practices."
     },
     {
@@ -224,7 +238,7 @@ export function WindowsEducation() {
             'Angular': '🅰️', 'Spring Boot': '🌱', 'MongoDB': '🍃',
             'SQL': '🗄️', 'PL/SQL': '🔍', 'Git': '📝', 'Docker': '🐳',
             'Linux': '🐧', 'Symfony': '🎵', 'REST APIs': '🔌',
-            'Jenkins': '⚙️', 'Agile': '🔄', 'Arduino': '🔧'
+            'Agile': '🔄', 'Arduino': '🔧', 'Kubernetes': '☸️'
         };
         return icons[skill] || '💻';
     };
