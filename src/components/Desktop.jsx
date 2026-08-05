@@ -11,6 +11,7 @@ import {
 } from "@react95/icons";
 
 import onyl from "../assets/images/onyl.png"
+import sncf from "../assets/images/sncf.png"
 
 export const Desktop = () => {
     const { toggleWindow } = useWindowContext();
@@ -115,6 +116,14 @@ export const Desktop = () => {
             >
                 <img src={onyl} alt={"Onyl Rocks"} style={{width: "32px", height: "32px"}} />
                 <p>Onyl Rocks</p>
+            </div>
+            <div
+                className={activeIcon === 9 ? "active-icon desktop-icon" : "inactive-icon desktop-icon"}
+                onClick={() => handleToggleIcon(9)}
+                onDoubleClick={() => handleDoubleClick('Sncf')}
+            >
+                <img src={sncf} alt={"SNCF"} style={{width: "48px", height: "25px"}} />
+                <p>SNCF</p>
             </div>
         </div>
     );

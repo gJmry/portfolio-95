@@ -13,6 +13,7 @@ export const WindowProvider = ({ children }) => {
         Sport: false,
         Skills: false,
         OnylRocks: false,
+        Sncf: false,
     });
 
     const toggleWindow = (windowName) => {

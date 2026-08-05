@@ -88,7 +88,7 @@ export function Footer() {
                 </div>
 
                 <div>
-                    © Jérémy Girard - 2025
+                    © Jérémy Girard - {(new Date().getFullYear())}
                 </div>
             </Toolbar>
         </AppBar>

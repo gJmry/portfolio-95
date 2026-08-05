@@ -12,6 +12,7 @@ import {WindowsMusic} from "./Windows/WindowsMusic.jsx";
 import {WindowsSkills} from "./Windows/WindowsSkills.jsx";
 import {WindowsExperiences} from "./Windows/WindowsExperiences.jsx";
 import {WindowsInternshipOnylRocks} from "./Windows/WindowsInternshipOnylRocks.jsx";
+import {WindowsInternshipSncf} from "./Windows/WindowsInternshipSncf.jsx";
 
 const PortfolioContainer = styled.div`
     width: 100%;
@@ -44,6 +45,7 @@ const PortfolioScreen = () => {
                     <WindowsSkills />
                     <WindowsExperiences />
                     <WindowsInternshipOnylRocks />
+                    <WindowsInternshipSncf />
                 </Content>
                 <Footer />
             </PortfolioContainer>
