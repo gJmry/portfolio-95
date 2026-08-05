@@ -16,31 +16,26 @@ body{
     filter: none;
   }
   .desktop-container {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-rows: repeat(5, 120px);
-    gap: 12px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
     padding: 16px;
-    justify-content: start;
-    align-content: start;
-    max-height: 100vh;
-    overflow-y: auto;
+    overflow: hidden;
   }
 
 
   .desktop-icon {
     width: 70px;
-    height: 70px;
-    margin: 12px;
-    padding: 4px;
+    height: auto;
+    padding: 8px 4px;
     text-align: center;
     color: white;
-    cursor: pointer;
+    cursor: grab;
     user-select: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 4px;
   }
 
@@ -50,8 +45,11 @@ body{
   }
 
   .desktop-icon p {
-    font-size: 12px;
+    font-size: 11px;
     text-align: center;
+    word-wrap: break-word;
+    margin: 0;
+    line-height: 1.2;
   }
 
   .active-icon {

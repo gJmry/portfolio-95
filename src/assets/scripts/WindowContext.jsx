@@ -26,13 +26,11 @@ export const WindowProvider = ({ children }) => {
             [windowName]: !prevWindows[windowName],
         }));
         
-        // Bring to front when opening
         focusWindow(windowName);
     };
 
     const focusWindow = (windowName) => {
         setWindowOrder((prevOrder) => {
-            // Remove if exists and add to end
             const filtered = prevOrder.filter((w) => w !== windowName);
             return [...filtered, windowName];
         });
