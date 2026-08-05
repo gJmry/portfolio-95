@@ -1,7 +1,6 @@
 import React from 'react';
 import { useWindowContext } from '../../assets/scripts/WindowContext.jsx';
 import { WindowsComponent } from './WindowsComponent.jsx';
-import cv from "../../assets/images/cv.png"
 import cat from "../../assets/images/cat.jpg"
 
 export function WindowsAbout() {

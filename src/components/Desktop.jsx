@@ -15,6 +15,8 @@ import sncf from "../assets/images/sncf.png"
 
 const GRID_SIZE = 90;
 const ICON_SIZE = 70;
+const DEFAULT_START_X = GRID_SIZE * 2;
+const DEFAULT_START_Y = GRID_SIZE;
 
 const iconsList = [
     { id: 1, label: 'Recycle Bin', windowName: 'RecycleBin', icon: <RecycleFull variant="32x32_4"/> },
@@ -30,36 +32,29 @@ const iconsList = [
 ];
 
 const defaultPositions = {
-    1: { x: 0, y: 0 },
-    2: { x: GRID_SIZE, y: 0 },
-    3: { x: GRID_SIZE * 2, y: 0 },
-    4: { x: GRID_SIZE * 3, y: 0 },
-    5: { x: GRID_SIZE * 4, y: 0 },
-    6: { x: 0, y: GRID_SIZE },
-    7: { x: GRID_SIZE, y: GRID_SIZE },
-    8: { x: GRID_SIZE * 2, y: GRID_SIZE },
-    9: { x: GRID_SIZE * 3, y: GRID_SIZE },
-    10: { x: GRID_SIZE * 4, y: GRID_SIZE },
+    1: { x: DEFAULT_START_X, y: DEFAULT_START_Y },
+    2: { x: DEFAULT_START_X, y: DEFAULT_START_Y + GRID_SIZE },
+    3: { x: DEFAULT_START_X, y: DEFAULT_START_Y + GRID_SIZE * 2 },
+    4: { x: DEFAULT_START_X, y: DEFAULT_START_Y + GRID_SIZE * 3 },
+    5: { x: DEFAULT_START_X + GRID_SIZE, y: DEFAULT_START_Y },
+    6: { x: DEFAULT_START_X + GRID_SIZE, y: DEFAULT_START_Y + GRID_SIZE },
+    7: { x: DEFAULT_START_X + GRID_SIZE, y: DEFAULT_START_Y + GRID_SIZE * 2 },
+    8: { x: DEFAULT_START_X + GRID_SIZE, y: DEFAULT_START_Y + GRID_SIZE * 3 },
+    9: { x: DEFAULT_START_X + GRID_SIZE * 2, y: DEFAULT_START_Y },
+    10: { x: DEFAULT_START_X + GRID_SIZE * 2, y: DEFAULT_START_Y + GRID_SIZE },
 };
 
 export const Desktop = () => {
     const { toggleWindow } = useWindowContext();
 
     const [activeIcon, setActiveIcon] = useState(null);
-    const [positions, setPositions] = useState(() => {
-        const saved = localStorage.getItem('desktopPositions');
-        return saved ? JSON.parse(saved) : defaultPositions;
-    });
+    const [positions, setPositions] = useState(defaultPositions);
     const [draggingId, setDraggingId] = useState(null);
     const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
     const [draggedPosition, setDraggedPosition] = useState(null);
     const [initialPositions, setInitialPositions] = useState(positions);
 
     const containerRef = useRef(null);
-
-    useEffect(() => {
-        localStorage.setItem('desktopPositions', JSON.stringify(positions));
-    }, [positions]);
 
     const snapToGrid = (value) => {
         return Math.round(value / GRID_SIZE) * GRID_SIZE;
