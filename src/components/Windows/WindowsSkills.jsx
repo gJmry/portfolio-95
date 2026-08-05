@@ -92,6 +92,7 @@ export function WindowsSkills() {
             title="💻 Skills"
             onClose={() => toggleWindow('Skills')}
             defaultPosition={{x: 100, y: 100, width: 700, height: 500}}
+            windowName="Skills"
         >
             <Tabs value={activeTab} onChange={setActiveTab}>
                 <Tab value={0}>Frontend</Tab>

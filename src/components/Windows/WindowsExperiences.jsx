@@ -144,6 +144,7 @@ export function WindowsExperiences() {
             title="📜 University Experiences"
             onClose={() => toggleWindow('Experiences')}
             defaultPosition={{ x: 150, y: 100, width: 700, height: 500 }}
+            windowName="Experiences"
         >
             <ExperiencesContainer>
                 <TimelinePanel>

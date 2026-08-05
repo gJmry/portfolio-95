@@ -12,6 +12,7 @@ export function WindowsInternshipOnylRocks() {
             defaultPosition={{ x: 150, y: 150, width: 500, height: 500 }}
             title="Internship Onyl Rocks"
             onClose={() => toggleWindow('OnylRocks')}
+            windowName="OnylRocks"
         >
             <div style={{ overflow: 'auto', height: 300 }}>
                 <p>

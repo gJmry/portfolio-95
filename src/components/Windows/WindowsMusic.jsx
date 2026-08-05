@@ -12,7 +12,7 @@ export function WindowsMusic() {
     const [activeTab, setActiveTab] = useState(0);
 
     return (
-        <WindowsComponent title="Music" onClose={() => toggleWindow('Music')}>
+        <WindowsComponent title="Music" onClose={() => toggleWindow('Music')} windowName="Music">
             In construction !
         </WindowsComponent>
     );

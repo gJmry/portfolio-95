@@ -13,6 +13,7 @@ export function WindowsRecycleBin() {
         <WindowsComponent
             title="Recycle Bin"
             onClose={() => toggleWindow('RecycleBin')}
+            windowName="RecycleBin"
         >
             <Table>
                 <TableHead>

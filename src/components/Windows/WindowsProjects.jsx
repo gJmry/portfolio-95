@@ -212,6 +212,7 @@ export function WindowsProjects() {
                 title="💼 Projects"
                 onClose={() => toggleWindow('Projects')}
                 defaultPosition={{ x: 150, y: 80, width: 900, height: 650 }}
+                windowName="Projects"
             >
                 <ProjectsContainer>
                     <Tabs value={activeTab} onChange={(value) => setActiveTab(value)}>

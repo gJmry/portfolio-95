@@ -12,6 +12,7 @@ export function WindowsInternshipSncf() {
             defaultPosition={{ x: 150, y: 150, width: 520, height: 520 }}
             title="Internship — SNCF"
             onClose={() => toggleWindow('Sncf')}
+            windowName="Sncf"
         >
             <div style={{ overflow: 'auto', height: 320 }}>
                 <p>

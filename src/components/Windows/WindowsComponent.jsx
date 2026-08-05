@@ -9,9 +9,12 @@ import {
 } from 'react95';
 import styled from 'styled-components';
 import { Rnd } from 'react-rnd';
+import { useWindowContext } from '../../assets/scripts/WindowContext.jsx';
 
 const Wrapper = styled.div`
     padding: 5rem;
+    position: relative;
+    z-index: ${({ $zIndex }) => $zIndex};
 
     .window-title {
         display: flex;
@@ -67,9 +70,19 @@ export function WindowsComponent({
                                      toolbarButtons = [],
                                      children,
                                      footerContent,
+                                     windowName,
                                  }) {
+    const { focusWindow, getZIndex } = useWindowContext();
+    const zIndex = getZIndex(windowName);
+
+    const handleWindowClick = () => {
+        if (windowName) {
+            focusWindow(windowName);
+        }
+    };
+
     return (
-        <Wrapper>
+        <Wrapper $zIndex={zIndex} onClick={handleWindowClick}>
             <Rnd
                 default={defaultPosition}
                 dragHandleClassName="window-title"

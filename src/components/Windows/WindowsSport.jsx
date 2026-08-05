@@ -38,8 +38,9 @@ export function WindowsSport() {
     return (
         <WindowsComponent
             title="Sports"
-            onClose={() => toggleWindow('Sport')}>
-            <div style={{padding: '1rem', overflow: 'auto', height: 300}}>
+            onClose={() => toggleWindow('Sport')}
+            windowName="Sport"
+        >
                 <ul>
                     {sportsList.map((sport, index) => (
                         <li key={index} style={{marginBottom: '1rem', fontSize: '1.1rem'}}>
@@ -49,7 +50,6 @@ export function WindowsSport() {
                         </li>
                     ))}
                 </ul>
-            </div>
         </WindowsComponent>
     );
 };

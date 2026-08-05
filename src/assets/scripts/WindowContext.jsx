@@ -16,15 +16,35 @@ export const WindowProvider = ({ children }) => {
         Sncf: false,
     });
 
+    const [windowOrder, setWindowOrder] = useState([
+        'About', 'RecycleBin', 'Projects', 'Experiences', 'Music', 'Education', 'Sport', 'Skills', 'OnylRocks', 'Sncf'
+    ]);
+
     const toggleWindow = (windowName) => {
         setWindows((prevWindows) => ({
             ...prevWindows,
             [windowName]: !prevWindows[windowName],
         }));
+        
+        // Bring to front when opening
+        focusWindow(windowName);
+    };
+
+    const focusWindow = (windowName) => {
+        setWindowOrder((prevOrder) => {
+            // Remove if exists and add to end
+            const filtered = prevOrder.filter((w) => w !== windowName);
+            return [...filtered, windowName];
+        });
+    };
+
+    const getZIndex = (windowName) => {
+        const index = windowOrder.indexOf(windowName);
+        return index === -1 ? 1000 : 1000 + index;
     };
 
     return (
-        <WindowContext.Provider value={{ windows, toggleWindow }}>
+        <WindowContext.Provider value={{ windows, toggleWindow, focusWindow, getZIndex }}>
             {children}
         </WindowContext.Provider>
     );

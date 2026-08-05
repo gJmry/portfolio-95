@@ -29,6 +29,7 @@ export function WindowsAbout() {
         <WindowsComponent
             title="About me"
             onClose={() => toggleWindow('About')}
+            windowName="About"
         >
             <p>Hi! My name is Jeremy Girard, I'm {getAge()} years old, and I'm currently a fourth-year Computer Science engineering student at CPE Lyon.</p>
             <br></br>

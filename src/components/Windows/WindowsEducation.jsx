@@ -264,6 +264,7 @@ export function WindowsEducation() {
             title="🎓 Educational Journey"
             onClose={() => toggleWindow('Education')}
             defaultPosition={{x: 100, y: 100, width: 750, height: 600}}
+            windowName="Education"
         >
             <EducationContainer>
                 <ProgressContainer>
