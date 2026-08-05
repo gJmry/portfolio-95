@@ -12,14 +12,15 @@ import { Rnd } from 'react-rnd';
 import { useWindowContext } from '../../assets/scripts/WindowContext.jsx';
 
 const Wrapper = styled.div`
-    padding: 5rem;
-    position: relative;
+    position: fixed;
     z-index: ${({ $zIndex }) => $zIndex};
+    pointer-events: none;
 
     .window-title {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        cursor: move;
     }
 
     .close-icon {
@@ -48,7 +49,7 @@ const Wrapper = styled.div`
         &:after {
             height: 3px;
             width: 100%;
-            left: 0px;
+            left: 0;
             top: 50%;
             transform: translateY(-50%);
         }
@@ -60,6 +61,10 @@ const Wrapper = styled.div`
         height: 31px;
         line-height: 31px;
         padding-left: 0.25rem;
+    }
+
+    .window {
+        pointer-events: auto;
     }
 `;
 
@@ -75,24 +80,29 @@ export function WindowsComponent({
     const { focusWindow, getZIndex } = useWindowContext();
     const zIndex = getZIndex(windowName);
 
-    const handleWindowClick = () => {
+    const handleWindowClick = (e) => {
+        e.stopPropagation();
         if (windowName) {
             focusWindow(windowName);
         }
     };
 
     return (
-        <Wrapper $zIndex={zIndex} onClick={handleWindowClick}>
+        <Wrapper $zIndex={zIndex}>
             <Rnd
                 default={defaultPosition}
                 dragHandleClassName="window-title"
                 enableResizing={false}
+                disableDragging={false}
             >
-                <Window resizable={false} className="window">
+                <Window resizable={false} className="window" onClick={handleWindowClick}>
                     <WindowHeader className="window-title">
                         <span>{title}</span>
                         {onClose && (
-                            <Button onClick={onClose}>
+                            <Button onClick={(e) => {
+                                e.stopPropagation();
+                                onClose();
+                            }}>
                                 <span className="close-icon" />
                             </Button>
                         )}
