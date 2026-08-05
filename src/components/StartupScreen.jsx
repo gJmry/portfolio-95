@@ -1,7 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import stepsData from '../assets/json/steps.json';
+
+const STEP_INTERVAL_MS = 10;
+const NAVIGATE_DELAY_MS = 400;
 
 const Container = styled.div`
     width: 100%;
@@ -26,9 +29,7 @@ const Terminal = styled.div`
 `;
 
 const blink = keyframes`
-    50% {
-        opacity: 0;
-    }
+    50% { opacity: 0; }
 `;
 
 const Cursor = styled.span`
@@ -39,23 +40,21 @@ const StartupScreen = () => {
     const [step, setStep] = useState(0);
     const navigate = useNavigate();
     const terminalRef = useRef(null);
+    const timerRef = useRef(null);
 
     useEffect(() => {
         const steps = stepsData.steps;
-        const interval = setInterval(() => {
+        timerRef.current = setInterval(() => {
             setStep((prev) => {
                 if (prev === steps.length) {
-                    clearInterval(interval);
-                    setTimeout(() => {
-                        navigate('/main');
-                    }, 400);
+                    clearInterval(timerRef.current);
+                    setTimeout(() => navigate('/main'), NAVIGATE_DELAY_MS);
                     return prev;
                 }
                 return prev + 1;
             });
-        }, Math.floor(Math.random() * (100 - 100 + 1)) + 10);
-
-        return () => clearInterval(interval);
+        }, STEP_INTERVAL_MS);
+        return () => clearInterval(timerRef.current);
     }, [navigate]);
 
     useEffect(() => {

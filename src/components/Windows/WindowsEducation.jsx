@@ -1,15 +1,11 @@
-import React, {useState} from 'react';
-import {useWindowContext} from '../../assets/scripts/WindowContext.jsx';
-import {WindowsComponent} from './WindowsComponent.jsx';
-import {ScrollView, GroupBox, Button, Panel, Separator} from "react95";
+import React, { useState } from 'react';
+import { useWindowContext } from '../../assets/scripts/WindowContext.jsx';
+import { WindowsComponent } from './WindowsComponent.jsx';
+import { Button, Panel, Separator } from 'react95';
 import styled from 'styled-components';
-
-const EducationContainer = styled.div`
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-`;
+import { educationTimeline, getSkillIcon } from '../../assets/data/educationData.js';
+import { computeProgress } from '../../utils/dateUtils.js';
+import { SkillChip, ChipsRow, ProgressTrack, ProgressFill, ProgressLabel, WindowContainer } from '../shared/WindowStyles.jsx';
 
 const TimelineContainer = styled.div`
     display: flex;
@@ -20,14 +16,13 @@ const TimelineContainer = styled.div`
     padding-right: 10px;
 `;
 
-const EducationCard = styled(GroupBox)`
+const EducationCard = styled.div`
     position: relative;
     cursor: pointer;
-    transition: all 0.2s ease;
-    padding-bottom: 10px;
-    margin-top: 15px;
+    padding: 12px;
+    border: 2px outset #c0c0c0;
+    margin-top: 10px;
 `;
-
 
 const CardHeader = styled.div`
     display: flex;
@@ -36,36 +31,15 @@ const CardHeader = styled.div`
     margin-bottom: 10px;
 `;
 
-const YearTitle = styled.h3`
+const CardTitle = styled.h3`
     margin: 0;
     font-size: 16px;
     font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 8px;
 `;
 
 const ExpandButton = styled(Button)`
     font-size: 12px;
     min-width: 80px;
-`;
-
-const SkillsContainer = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 10px;
-`;
-
-const SkillChip = styled.div`
-    border: 1px outset #c0c0c0;
-    padding: 4px 8px;
-    font-size: 11px;
-    font-weight: bold;
-    border-radius: 0;
-    display: flex;
-    align-items: center;
-    gap: 4px;
 `;
 
 const DetailPanel = styled(Panel)`
@@ -75,277 +49,125 @@ const DetailPanel = styled(Panel)`
     box-sizing: border-box;
 `;
 
-const ProgressContainer = styled.div`
+const ProgressSection = styled.div`
     margin-bottom: 15px;
 `;
 
-const ProgressBar = styled.div`
-    width: 100%;
-    height: 20px;
-    background: white;
-    border: 2px inset #c0c0c0;
-    position: relative;
-    overflow: hidden;
-`;
+const findOverallDateRange = (timeline) => {
+    const start = timeline.reduce((earliest, entry) => {
+        const date = new Date(`${entry.startYear}-09-01`);
+        return date < earliest ? date : earliest;
+    }, new Date());
 
-const ProgressFill = styled.div`
-    height: 100%;
-    background: linear-gradient(90deg, #0080ff 0%, #0060ff 100%);
-    width: ${props => props.percentage}%;
-    transition: width 1s ease-in-out;
-    position: relative;
+    const end = timeline.reduce((latest, entry) => {
+        const date = new Date(`${entry.endYear}-09-01`);
+        return date > latest ? date : latest;
+    }, new Date(0));
 
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 2px,
-                rgba(255, 255, 255, 0.1) 2px,
-                rgba(255, 255, 255, 0.1) 4px
-        );
-    }
-`;
-
-const ProgressLabel = styled.div`
-    text-align: center;
-    font-size: 12px;
-    font-weight: bold;
-    margin-top: 5px;
-`;
-const calculateProgress = (startYear, endYear) => {
-    const startDate = new Date(`${startYear}-09-01`);
-    const endDate = new Date(`${endYear}-8-31`);
-    const today = new Date();
-
-    if (today <= startDate) return 0;
-    if (today >= endDate) return 100;
-
-    const totalTime = endDate - startDate;
-    const elapsedTime = today - startDate;
-    return Math.round((elapsedTime / totalTime) * 100);
+    return { start, end };
 };
 
-
-const educationTimeline = [
-    {
-        id: 5,
-        year: "🏛️ Engineering School - CPE Lyon (Computer Science & Communication Networks)",
-        period: "2025-2028",
-        startYear: 2025,
-        endYear: 2028,
-        details: [
-            "📚 Courses and projects to be defined",
-            "🔬 Specialization in Computer Science & Communication Networks",
-            "🌐 Advanced engineering training"
-        ],
-        skills: ["Computer Science", "Networks", "Engineering"],
-        description: "Beginning a new journey at CPE Lyon in Computer Science & Communication Networks. Courses and skills will be defined as the program progresses."
-    },
-    {
-        id: 4,
-        year: "🏛️ BUT Computer Science - 3rd Year",
-        period: "2024-2025",
-        startYear: 2024,
-        endYear: 2025,
-        details: [
-            "🅰️ Angular Enterprise Applications",
-            "🌱 Spring Boot Microservices",
-            "📊 Advanced Project Management",
-            "🍃 NoSQL Databases (MongoDB)",
-            "🔧 DevOps & CI/CD Practices",
-            "📱 Mobile Development Concepts"
-        ],
-        skills: ["Angular", "Spring Boot", "MongoDB", "Docker", "Kubernetes", "Agile"],
-        description: "Final year emphasizing enterprise-level development, microservices architecture, and professional practices."
-    },
-    {
-        id: 3,
-        year: "🏛️ BUT Computer Science - 2nd Year",
-        period: "2023-2024",
-        startYear: 2023,
-        endYear: 2024,
-        details: [
-            "⚡ JavaScript & DOM Manipulation",
-            "🐘 PHP Server-Side Development",
-            "🎵 Symfony Framework Architecture",
-            "🟢 Vue.js Frontend Framework",
-            "📈 Project Management (Intermediate)",
-            "🔍 Advanced Database (PL/SQL)"
-        ],
-        skills: ["JavaScript", "PHP", "Symfony", "Vue.js", "PL/SQL", "REST APIs"],
-        description: "Advanced web development year with focus on full-stack technologies and modern frameworks."
-    },
-    {
-        id: 2,
-        year: "🏛️ BUT Computer Science - 1st Year",
-        period: "2022-2023",
-        startYear: 2022,
-        endYear: 2023,
-        details: [
-            "🔵 C Programming Fundamentals",
-            "☕ Java Object-Oriented Programming",
-            "🎨 Web Technologies (HTML/CSS)",
-            "📊 Business & Accounting Principles",
-            "🗄️ Database Design & SQL"
-        ],
-        skills: ["C", "Java", "HTML/CSS", "SQL", "Git", "Linux"],
-        description: "First year focused on programming fundamentals, introducing core computer science concepts and business knowledge."
-    },
-    {
-        id: 1,
-        year: "🎓 High School Diploma",
-        period: "2019-2022",
-        startYear: 2019,
-        endYear: 2022,
-        details: [
-            "🏅 Mention Bien (Good Honors)",
-            "💻 Major: Digital & Computer Science (SIN)",
-            "📐 Mathematics Specialization",
-            "🔬 Physics & Engineering Fundamentals"
-        ],
-        skills: ["HTML", "CSS", "Python", "Arduino", "Electronics"],
-        description: "Graduated with honors in Digital & Computer Science track, building foundational programming and engineering skills."
+const toggleSetEntry = (set, id) => {
+    const next = new Set(set);
+    if (next.has(id)) {
+        next.delete(id);
+    } else {
+        next.add(id);
     }
-];
-
+    return next;
+};
 
 export function WindowsEducation() {
-    const {windows, toggleWindow} = useWindowContext();
+    const { windows, toggleWindow } = useWindowContext();
     const [expandedCards, setExpandedCards] = useState(new Set());
 
     if (!windows.Education) return null;
 
-    const toggleCard = (id) => {
-        const newExpanded = new Set(expandedCards);
-        if (newExpanded.has(id)) {
-            newExpanded.delete(id);
-        } else {
-            newExpanded.add(id);
-        }
-        setExpandedCards(newExpanded);
-    };
+    const { start, end } = findOverallDateRange(educationTimeline);
+    const totalProgress = computeProgress(start.getFullYear(), end.getFullYear());
 
-    const getSkillIcon = (skill) => {
-        const icons = {
-            'HTML': '🌐', 'CSS': '🎨', 'JavaScript': '⚡', 'Java': '☕',
-            'C': '🔵', 'PHP': '🐘', 'Python': '🐍', 'Vue.js': '🟢',
-            'Angular': '🅰️', 'Spring Boot': '🌱', 'MongoDB': '🍃',
-            'SQL': '🗄️', 'PL/SQL': '🔍', 'Git': '📝', 'Docker': '🐳',
-            'Linux': '🐧', 'Symfony': '🎵', 'REST APIs': '🔌',
-            'Agile': '🔄', 'Arduino': '🔧', 'Kubernetes': '☸️'
-        };
-        return icons[skill] || '💻';
-    };
-
-    const overallStartDate = educationTimeline.reduce((earliest, entry) => {
-        const start = new Date(`${entry.startYear}-09-01`);
-        return start < earliest ? start : earliest;
-    }, new Date());
-
-    const overallEndDate = educationTimeline.reduce((latest, entry) => {
-        const end = new Date(`${entry.endYear}-09-01`);
-        return end > latest ? end : latest;
-    }, new Date());
-
-    const totalProgress = calculateProgress(
-        overallStartDate.getFullYear(),
-        overallEndDate.getFullYear()
-    );
-
+    const handleToggleCard = (id) => setExpandedCards((prev) => toggleSetEntry(prev, id));
 
     return (
         <WindowsComponent
-            title="🎓 Educational Journey"
+            title="Educational Journey"
             onClose={() => toggleWindow('Education')}
-            defaultPosition={{x: 100, y: 100, width: 750, height: 600}}
+            defaultPosition={{ x: 100, y: 100, width: 750, height: 600 }}
             windowName="Education"
         >
-            <EducationContainer>
-                <ProgressContainer>
-                    <h4 style={{margin: '0 0 10px 0', textAlign: 'center'}}>
+            <WindowContainer $height="500px" $padding="15px">
+                <ProgressSection>
+                    <h4 style={{ margin: '0 0 10px 0', textAlign: 'center' }}>
                         Academic Progress Timeline
                     </h4>
-                    <ProgressBar>
-                        <ProgressFill percentage={totalProgress}/>
-                    </ProgressBar>
+                    <ProgressTrack>
+                        <ProgressFill $percentage={totalProgress} />
+                    </ProgressTrack>
                     <ProgressLabel>Bachelor's Degree Progress: {totalProgress}%</ProgressLabel>
-                </ProgressContainer>
+                </ProgressSection>
 
-                <Separator style={{margin: '15px 0'}}/>
+                <Separator style={{ margin: '15px 0' }} />
 
                 <TimelineContainer>
                     {educationTimeline.map((entry) => {
-                            const entryProgress = calculateProgress(entry.startYear, entry.endYear);
+                        const entryProgress = computeProgress(entry.startYear, entry.endYear);
+                        const isExpanded = expandedCards.has(entry.id);
 
-                            return (
-                                <EducationCard
-                                    key={entry.id}
-                                    label={`${entry.year} • ${entry.period}`}
-                                    onClick={() => toggleCard(entry.id)}
-                                >
-                                    <CardHeader>
-                                        <YearTitle>
-                                            {entry.year}
-                                        </YearTitle>
-                                        <ExpandButton
-                                            size="sm"
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                toggleCard(entry.id);
-                                            }}
-                                        >
-                                            {expandedCards.has(entry.id) ? '📖 Less' : '📋 More'}
-                                        </ExpandButton>
-                                    </CardHeader>
+                        return (
+                            <EducationCard key={entry.id} onClick={() => handleToggleCard(entry.id)}>
+                                <CardHeader>
+                                    <CardTitle>{entry.year}</CardTitle>
+                                    <ExpandButton
+                                        size="sm"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            handleToggleCard(entry.id);
+                                        }}
+                                    >
+                                        {isExpanded ? 'Less' : 'More'}
+                                    </ExpandButton>
+                                </CardHeader>
 
-                                    <div style={{fontSize: '13px', marginBottom: '8px'}}>
-                                        {entry.description}
-                                    </div>
+                                <div style={{ fontSize: '13px', marginBottom: '8px' }}>
+                                    {entry.description}
+                                </div>
 
-                                    <SkillsContainer>
-                                        {entry.skills.map((skill, idx) => (
-                                            <SkillChip key={idx}>
-                                                {getSkillIcon(skill)} {skill}
-                                            </SkillChip>
-                                        ))}
-                                    </SkillsContainer>
+                                <ChipsRow>
+                                    {entry.skills.map((skill) => (
+                                        <SkillChip key={skill}>
+                                            {getSkillIcon(skill)} {skill}
+                                        </SkillChip>
+                                    ))}
+                                </ChipsRow>
 
-                                    {expandedCards.has(entry.id) && (
-                                        <DetailPanel variant="well">
-                                            <h4 style={{margin: '0 0 10px 0'}}>📚 Detailed Curriculum</h4>
-                                            <ul style={{margin: '0', paddingLeft: '20px'}}>
-                                                {entry.details.map((detail, idx) => (
-                                                    <li key={idx} style={{marginBottom: '5px', fontSize: '12px'}}>
-                                                        {detail}
-                                                    </li>
-                                                ))}
-                                            </ul>
-
-                                            <div style={{marginTop: '15px', textAlign: 'center'}}>
-                                                <div style={{fontSize: '11px', fontWeight: 'bold'}}>
-                                                    Completion Rate
-                                                </div>
-                                                <ProgressBar style={{height: '12px', marginTop: '5px'}}>
-                                                    <ProgressFill percentage={entryProgress}/>
-                                                </ProgressBar>
-                                                <div style={{fontSize: '10px', marginTop: '2px'}}>
-                                                    {entryProgress}% Complete
-                                                </div>
+                                {isExpanded && (
+                                    <DetailPanel variant="well">
+                                        <h4 style={{ margin: '0 0 10px 0' }}>Detailed Curriculum</h4>
+                                        <ul style={{ margin: 0, paddingLeft: '20px' }}>
+                                            {entry.details.map((detail) => (
+                                                <li key={detail} style={{ marginBottom: '5px', fontSize: '12px' }}>
+                                                    {detail}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                        <div style={{ marginTop: '15px', textAlign: 'center' }}>
+                                            <div style={{ fontSize: '11px', fontWeight: 'bold' }}>
+                                                Completion Rate
                                             </div>
-                                        </DetailPanel>
-                                    )}
-                                </EducationCard>
-                            )
-                        }
-                    )}
+                                            <ProgressTrack $height="12px" style={{ marginTop: '5px' }}>
+                                                <ProgressFill $percentage={entryProgress} />
+                                            </ProgressTrack>
+                                            <div style={{ fontSize: '10px', marginTop: '2px' }}>
+                                                {entryProgress}% Complete
+                                            </div>
+                                        </div>
+                                    </DetailPanel>
+                                )}
+                            </EducationCard>
+                        );
+                    })}
                 </TimelineContainer>
-            </EducationContainer>
+            </WindowContainer>
         </WindowsComponent>
     );
 }

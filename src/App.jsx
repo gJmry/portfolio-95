@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import StartupScreen from './components/StartupScreen';
 import MainScreen from './components/MainScreen';
 import PortfolioScreen from './components/PortfolioScreen';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import vistaesqueMidnight from 'react95/dist/themes/vistaesqueMidnight';
 import ms_sans_serif from 'react95/dist/fonts/ms_sans_serif.woff2';
 import ms_sans_serif_bold from 'react95/dist/fonts/ms_sans_serif_bold.woff2';
@@ -31,28 +31,26 @@ const GlobalStyles = createGlobalStyle`
     }
 `;
 
-const App = () => {
-    const [hasStarted, setHasStarted] = useState(false);
+const AppContainer = styled.div`
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+`;
 
-    return (
-        <div>
-            <GlobalStyles/>
-            <ThemeProvider theme={vistaesqueMidnight}>
-                <Router>
-                    <div style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden' }}>
-                        <Routes>
-                            <Route
-                                path="/"
-                                element={<StartupScreen onStartupComplete={() => setHasStarted(true)} />}
-                            />
-                            <Route path="/main" element={<MainScreen />} />
-                            <Route path="/portfolio" element={<PortfolioScreen />} />
-                        </Routes>
-                    </div>
-                </Router>
-            </ThemeProvider>
-        </div>
-    );
-};
+const App = () => (
+    <ThemeProvider theme={vistaesqueMidnight}>
+        <GlobalStyles />
+        <Router>
+            <AppContainer>
+                <Routes>
+                    <Route path="/" element={<StartupScreen />} />
+                    <Route path="/main" element={<MainScreen />} />
+                    <Route path="/portfolio" element={<PortfolioScreen />} />
+                </Routes>
+            </AppContainer>
+        </Router>
+    </ThemeProvider>
+);
 
 export default App;

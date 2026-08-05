@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-    Button,
-    Frame,
-    Toolbar,
-    Window,
-    WindowContent,
-    WindowHeader,
-} from 'react95';
+import { Button, Frame, Toolbar, Window, WindowContent, WindowHeader } from 'react95';
 import styled from 'styled-components';
 import { Rnd } from 'react-rnd';
 import { useWindowContext } from '../../assets/scripts/WindowContext.jsx';
@@ -55,7 +48,7 @@ const Wrapper = styled.div`
         }
     }
 
-    .footer {
+    .footer-frame {
         display: block;
         margin: 0.25rem;
         height: 31px;
@@ -69,22 +62,20 @@ const Wrapper = styled.div`
 `;
 
 export function WindowsComponent({
-                                     title = 'Window',
-                                     defaultPosition = { x: 100, y: 100, width: 400, height: 300 },
-                                     onClose,
-                                     toolbarButtons = [],
-                                     children,
-                                     footerContent,
-                                     windowName,
-                                 }) {
+    title = 'Window',
+    defaultPosition = { x: 100, y: 100, width: 400, height: 300 },
+    onClose,
+    toolbarButtons = [],
+    children,
+    footerContent,
+    windowName,
+}) {
     const { focusWindow, getZIndex } = useWindowContext();
     const zIndex = getZIndex(windowName);
 
     const handleWindowClick = (e) => {
         e.stopPropagation();
-        if (windowName) {
-            focusWindow(windowName);
-        }
+        if (windowName) focusWindow(windowName);
     };
 
     return (
@@ -93,21 +84,16 @@ export function WindowsComponent({
                 default={defaultPosition}
                 dragHandleClassName="window-title"
                 enableResizing={false}
-                disableDragging={false}
             >
                 <Window resizable={false} className="window" onClick={handleWindowClick}>
                     <WindowHeader className="window-title">
                         <span>{title}</span>
                         {onClose && (
-                            <Button onClick={(e) => {
-                                e.stopPropagation();
-                                onClose();
-                            }}>
+                            <Button onClick={(e) => { e.stopPropagation(); onClose(); }}>
                                 <span className="close-icon" />
                             </Button>
                         )}
                     </WindowHeader>
-
                     <Toolbar>
                         {toolbarButtons.map((btn, idx) => (
                             <Button key={idx} variant="menu" size="sm" {...btn.props}>
@@ -115,11 +101,9 @@ export function WindowsComponent({
                             </Button>
                         ))}
                     </Toolbar>
-
                     <WindowContent>{children}</WindowContent>
-
                     {footerContent && (
-                        <Frame variant="well" className="footer">
+                        <Frame variant="well" className="footer-frame">
                             {footerContent}
                         </Frame>
                     )}

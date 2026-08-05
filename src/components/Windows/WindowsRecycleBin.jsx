@@ -1,8 +1,17 @@
 import React from 'react';
 import { useWindowContext } from '../../assets/scripts/WindowContext.jsx';
 import { WindowsComponent } from './WindowsComponent.jsx';
-import cv from "../../assets/images/cv.png"
-import {Table, TableBody, TableDataCell, TableHead, TableHeadCell, TableRow} from "react95";
+import { Table, TableBody, TableDataCell, TableHead, TableHeadCell, TableRow } from 'react95';
+
+const recycleBinItems = [
+    { name: 'Old CV', type: 'PDF Document', size: '1.2 MB' },
+    { name: 'DeanTUI', type: 'Rust File', size: '2.8 MB' },
+    { name: 'Old Portfolio', type: 'HTML File', size: '850 KB' },
+    { name: 'Project Backup', type: 'ZIP Archive', size: '15 MB' },
+    { name: 'ChOdeJoue', type: 'Text Document', size: '620 KB' },
+    { name: '12', type: 'WAV Audio', size: '254 MB' },
+    { name: 'Zikette', type: 'Executable File', size: '12 MB' },
+];
 
 export function WindowsRecycleBin() {
     const { windows, toggleWindow } = useWindowContext();
@@ -24,41 +33,13 @@ export function WindowsRecycleBin() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    <TableRow>
-                        <TableDataCell>Old CV</TableDataCell>
-                        <TableDataCell>PDF Document</TableDataCell>
-                        <TableDataCell>1.2 MB</TableDataCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableDataCell>DeanTUI</TableDataCell>
-                        <TableDataCell>Rust File</TableDataCell>
-                        <TableDataCell>2.8 MB</TableDataCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableDataCell>Old Portfolio</TableDataCell>
-                        <TableDataCell>HTML File</TableDataCell>
-                        <TableDataCell>850 KB</TableDataCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableDataCell>Project Backup</TableDataCell>
-                        <TableDataCell>ZIP Archive</TableDataCell>
-                        <TableDataCell>15 MB</TableDataCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableDataCell>ChOdeJoue</TableDataCell>
-                        <TableDataCell>Text Document</TableDataCell>
-                        <TableDataCell>620 KB</TableDataCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableDataCell>12</TableDataCell>
-                        <TableDataCell>WAV Audio</TableDataCell>
-                        <TableDataCell>254 MB</TableDataCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableDataCell>Zikette</TableDataCell>
-                        <TableDataCell>Executable File</TableDataCell>
-                        <TableDataCell>12 MB</TableDataCell>
-                    </TableRow>
+                    {recycleBinItems.map((item) => (
+                        <TableRow key={item.name}>
+                            <TableDataCell>{item.name}</TableDataCell>
+                            <TableDataCell>{item.type}</TableDataCell>
+                            <TableDataCell>{item.size}</TableDataCell>
+                        </TableRow>
+                    ))}
                 </TableBody>
             </Table>
         </WindowsComponent>

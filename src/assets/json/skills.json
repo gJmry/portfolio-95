@@ -1,0 +1,6 @@
+{
+  "frontend": ["TypeScript", "Tailwind CSS", "Styled Components", "Svelte", "React", "Vue.js", "Angular"],
+  "backend": ["Java", "PHP", "Rust", "Database Design (SQL/NoSQL)", "GraphQL"],
+  "devops": ["Docker", "Kubernetes", "CI/CD Pipelines", "Linux", "AWS"]
+}
+

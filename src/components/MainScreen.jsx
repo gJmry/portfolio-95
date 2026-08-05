@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Monitor, ProgressBar } from 'react95';
 import MonitorWithHourglass from './MonitorAndHourglass.jsx';
 import Background from './Background.jsx';
 import { useNavigate } from 'react-router-dom';
+
+const PROGRESS_STEP = 5;
+const PROGRESS_INTERVAL_MS = 100;
+const NAVIGATE_DELAY_MS = 500;
 
 const Container = styled.div`
     width: 100%;
@@ -18,7 +22,7 @@ const Container = styled.div`
     color: white;
 `;
 
-const ScreenWrapper = styled.div`
+const MonitorWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,54 +32,49 @@ const ScreenWrapper = styled.div`
     cursor: pointer;
 `;
 
+const MonitorFrame = styled.div`
+    position: relative;
+    width: 300px;
+    height: 200px;
+`;
+
 const MainScreen = () => {
     const navigate = useNavigate();
-    const [isHourglass, setIsHourglass] = useState(false);
-    const [percent, setPercent] = useState(0);
-    const [isProgressing, setIsProgressing] = useState(false);
+    const [showHourglass, setShowHourglass] = useState(false);
+    const [progress, setProgress] = useState(0);
+    const timerRef = useRef(null);
 
-    const handleMonitorClick = () => {
-        if (!isProgressing) {
-            setIsHourglass(true);
-            setIsProgressing(true);
-        }
+    const startProgress = () => {
+        if (timerRef.current) return;
+        setShowHourglass(true);
+        timerRef.current = setInterval(() => {
+            setProgress((prev) => {
+                const next = Math.min(prev + PROGRESS_STEP, 100);
+                if (next === 100) {
+                    clearInterval(timerRef.current);
+                    setTimeout(() => navigate('/portfolio'), NAVIGATE_DELAY_MS);
+                }
+                return next;
+            });
+        }, PROGRESS_INTERVAL_MS);
     };
 
-    useEffect(() => {
-        let timer;
-
-        if (isProgressing) {
-            timer = setInterval(() => {
-                setPercent((prev) => {
-                    const nextValue = Math.min(prev + 5, 100);
-                    if (nextValue === 100) {
-                        clearInterval(timer);
-                        setTimeout(() => {
-                            navigate('/portfolio');
-                        }, 500);
-                    }
-                    return nextValue;
-                });
-            }, 100);
-        }
-
-        return () => clearInterval(timer);
-    }, [isProgressing, navigate]);
+    useEffect(() => () => clearInterval(timerRef.current), []);
 
     return (
         <Container>
-            <Background text="Jérémy Girard" />
-            <p> Click on the Monitor</p>
-            <ScreenWrapper onClick={handleMonitorClick}>
-                {isHourglass ? (
+            <Background text="Jeremy Girard" />
+            <p>Click on the Monitor</p>
+            <MonitorWrapper onClick={startProgress}>
+                {showHourglass ? (
                     <MonitorWithHourglass />
                 ) : (
-                    <div style={{position: 'relative', width: '300px', height: '200px'}}>
-                        <Monitor className="retro-monitor" backgroundStyles={{background: 'blue'}}/>
-                    </div>
+                    <MonitorFrame>
+                        <Monitor className="retro-monitor" backgroundStyles={{ background: 'blue' }} />
+                    </MonitorFrame>
                 )}
-                <ProgressBar value={Math.floor(percent)}/>
-            </ScreenWrapper>
+                <ProgressBar value={Math.floor(progress)} />
+            </MonitorWrapper>
         </Container>
     );
 };
